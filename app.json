@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarTitleText": "得到的"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "找需求"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "发需求"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [],
+  "sitemapLocation": "sitemap16.json"
+}
