@@ -1,15 +1,16 @@
 {
   "pages": [
+    "pages/find/main/main",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
-    "navigationBarTitleText": "得到的"
+    "navigationBarTitleText": "需求大厅"
   },
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/find/main/main",
         "text": "找需求"
       },
       {
