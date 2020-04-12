@@ -1,2 +1,8 @@
 <!--pages/find/main/main.wxml-->
-<text>pages/find/main/main.wxml</text>
+<view class="container">
+	<!-- <text>pages/find/main/main.wxml</text> -->
+	<view class="find_main_top_image">
+  <image src="{{banner_image_url}}" mode="aspectFill" class="find_main_top_image find_main_top_image_img">
+	</image>
+  </view>
+</view>

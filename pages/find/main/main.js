@@ -5,7 +5,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    banner_image_url:"https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
   },
 
   /**
