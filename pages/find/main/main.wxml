@@ -1,6 +1,12 @@
 <!--pages/find/main/main.wxml-->
 <view class="container">
 	<!-- <text>pages/find/main/main.wxml</text> -->
+  <view class="find_main_top_searchbar">
+    <view class="find_main_top_searchbar_area">
+      <input class="find_main_top_searchbar_area_input" placeholder="需求搜索" confirm-type="search"></input>
+      <mp-icon class="find_main_top_searchbar_area_search_icon" icon="search" color="#cccccc" size="{{25}}"></mp-icon>
+    </view>    
+  </view>
 	<view class="find_main_top_image">
   <image src="{{banner_image_url}}" mode="aspectFill" class="find_main_top_image find_main_top_image_img">
 	</image>
