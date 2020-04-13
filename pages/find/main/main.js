@@ -6,6 +6,12 @@ Page({
    */
   data: {
     banner_image_url:"https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
+    arrOfData: [1, 2, 3, 4],
+    array: [{
+      message: 'foo',
+    }, {
+      message: 'bar'
+    }]
   },
 
   /**

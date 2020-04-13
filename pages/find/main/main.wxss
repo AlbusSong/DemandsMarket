@@ -44,3 +44,20 @@
 .find_main_top_image_img {
   background-color: #eeeeee;
 }
+
+.demand_market_tableview {
+  background-color: #2a7741;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  bottom: 0px;
+  top: 180px;
+}
+
+.demand_market_tableview_cell {
+  background-color: #b67e29;
+  /* position: absolute; */
+  left: 0px;
+  width: 100%;
+  height: 50px;
+}
