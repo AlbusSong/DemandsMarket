@@ -1,4 +1,7 @@
 <!--pages/find/main/main.wxml-->
+
+<wxs src="./main.wxs" module="main" />
+
 <view class="container">
 	<!-- <text>pages/find/main/main.wxml</text> -->
 	<view class="find_main_top_searchbar">
@@ -11,11 +14,11 @@
 		<image src="{{banner_image_url}}" mode="aspectFill" class="find_main_top_image find_main_top_image_img">
 		</image>
 	</view>
-	<view class="demand_market_tableview">
+	<scroll-view class="demand_market_tableview" scroll-y="true">
 		<block wx:for="{{[1, 2, 3, 4]}} " wx:key="unique" wx:for-index="idx">
-			<view class="demand_market_tableview_cell">
-        Hasdf
+			<view class="demand_market_tableview_cell" style="background-color: {{main.randomColor()}};">
+        {{main.randomColor()}}
       </view>      
 		</block>
-	</view>
+	</scroll-view>
 </view>
