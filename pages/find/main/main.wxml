@@ -16,8 +16,16 @@
 	</view>
 	<scroll-view class="demand_market_tableview" scroll-y="true">
 		<block wx:for="{{[1, 2, 3, 4]}} " wx:key="unique" wx:for-index="idx">
-			<view class="demand_market_tableview_cell" style="background-color: {{main.randomColor()}};">
-        {{main.randomColor()}}
+			<view class="demand_market_tableview_cell" style="background-color: #ffffff;">
+				<view class="demand_market_tableview_cell_title">热风棉资源需求</view>
+				<view class="demand_market_tableview_cell_subtitle">需求人：平台</view>
+				<view class="demand_market_tableview_cell_subtitle_inline">需求类别：采购</view>
+				<view class="demand_market_tableview_cell_subtitle_inline">需求状态：<span style="color: #af2f39">对接中</span>				
+				</view>				
+				<view class="demand_market_tableview_cell_subtitle_inline" style="margin-bottom: 10px">结束时间：2020-05-09</view>
+				<view class="demand_market_tableview_cell_subtitle_inline" style="margin-bottom: 10px">查看次数：31				
+				</view>
+				<view style="height:1px; background-color: #f1f1f7; margin: 0px 10px"></view>
       </view>      
 		</block>
 	</scroll-view>
