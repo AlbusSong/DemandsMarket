@@ -20,6 +20,11 @@ Page({
     ],
   },
 
+  functionAreaClicked: function(event) {
+    let itemIndex = Math.floor(4 * event.detail.x/wx.getSystemInfoSync().windowWidth);
+    console.log(itemIndex);
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
