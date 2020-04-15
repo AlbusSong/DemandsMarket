@@ -11,7 +11,13 @@ Page({
       message: 'foo',
     }, {
       message: 'bar'
-    }]
+    }],
+    arrOfFunctionItem: [
+      {title:"需求分类"},
+      {title:"发布时间"},
+      {title:"需求状态"},
+      {title:"所在地区"},
+    ],
   },
 
   /**

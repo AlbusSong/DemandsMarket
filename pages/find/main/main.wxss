@@ -45,8 +45,25 @@
   background-color: #eeeeee;
 }
 
+.demand_market_filter_function_area {
+  background-color: #fff;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  top: 140px;
+}
+
+.demand_market_filter_function_item {
+  background-color: #fff;
+  display: inline-block;
+  width: 25%;
+  font-size: 13px;
+  /* position: relative;
+  left: 10px; */
+}
+
 .demand_market_tableview {
-  background-color: #2a7741;
+  background-color: #ffffff;
   position: absolute;
   left: 0px;
   width: 100%;
