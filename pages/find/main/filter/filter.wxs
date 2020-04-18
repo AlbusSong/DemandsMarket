@@ -1,0 +1,10 @@
+var decideItemColor = function(index, selectedIndex) {
+  var colorStr = "#999";
+  if (index == selectedIndex) {
+    colorStr = "#333";
+  }
+  return colorStr
+}
+
+module.exports.decideItemColor = decideItemColor;
+module.exports.testColor = "#0f0";

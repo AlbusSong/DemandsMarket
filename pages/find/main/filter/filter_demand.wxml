@@ -1,0 +1,7 @@
+<!-- <view class="filter_demand_wrapper"> -->
+  <scroll-view class="filter_demand_scrollview" scroll-y="true"> 
+  <view class="filter_demand_item_normal" wx:for="{{arrOfDemandFilterItem}}" wx:key="unique">
+    <span style="line-height: 30px">{{item}}</span>
+  </view>
+  </scroll-view>  
+<!-- </view> -->

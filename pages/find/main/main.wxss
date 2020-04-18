@@ -1,3 +1,5 @@
+@import "../main/filter/filter.wxss";
+
 .find_main_top_searchbar {
   position: absolute;
   width: 100%;

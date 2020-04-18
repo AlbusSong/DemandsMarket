@@ -1,4 +1,5 @@
 // pages/find/main/main.js
+
 Page({
 
   /**
@@ -6,7 +7,7 @@ Page({
    */
   data: {
     banner_image_url:"https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
-    arrOfData: [1, 2, 3, 4],
+    arrOfData: [1, 2, 3, 4],    
     array: [{
       message: 'foo',
     }, {
@@ -18,11 +19,35 @@ Page({
       {title:"需求状态"},
       {title:"所在地区"},
     ],
-  },
+
+    // Filter View related
+    selectedIndexForFilterView: 0,
+    shouldShowFilterView: true,
+    arrOfDemandFilterItem: ['所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
+    selectedIndexForDemandFilter: 0,
+  },  
 
   functionAreaClicked: function(event) {
+    let itemIndex = Math.floor(4 * event.detail.x/wx.getSystemInfoSync().windowWidth);    
+    console.log(itemIndex);
+    this.setData({
+      selectedIndexForFilterView: itemIndex,
+      shouldShowFilterView: true
+    });
+  },
+
+  functionAreaInFilterViewClicked: function(event) {
     let itemIndex = Math.floor(4 * event.detail.x/wx.getSystemInfoSync().windowWidth);
     console.log(itemIndex);
+    this.setData({
+      selectedIndexForFilterView: itemIndex,
+    });
+  },
+
+  filterBackgroundClicked: function(event) {
+    this.setData({
+      shouldShowFilterView: false
+    });
   },
 
   /**
