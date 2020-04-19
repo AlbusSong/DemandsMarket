@@ -3,7 +3,7 @@
 <view class="filter_wrapper" wx:if="{{shouldShowFilterView}}" catchtap="filterBackgroundClicked">
 		<view class="demand_market_filter_function_area_in_filter_view" catchtap="functionAreaInFilterViewClicked">	
 		<view wx:for="{{arrOfFunctionItem}}" wx:key="unique" class="demand_market_filter_function_item" style="background-color: #fff; height: 39px;">
-			<view style="background-color: #fff; display: inline-block; left: 3px; position: relative; color: {{filter.decideItemColor(index, selectedIndexForFilterView)}};">
+			<view style="background-color: #fff; display: inline-block; left: 3px; position: relative; color: {{filter.decideSegmentationItemColor(index, selectedIndexForFilterView)}};">
 				{{item.title}}
 			</view>
 			<icon class="iconfont icon-xiajiantou1" style="left: 3px; top: 3px; position: relative; font-size: 20px; background-color: #fff;" />

@@ -1,10 +1,19 @@
-var decideItemColor = function(index, selectedIndex) {
+var decideSegmentationItemColor = function(index, selectedIndex) {
   var colorStr = "#999";
   if (index == selectedIndex) {
     colorStr = "#333";
   }
-  return colorStr
+  return colorStr;
 }
 
-module.exports.decideItemColor = decideItemColor;
+var decideDemandItemFontColor = function(index, selectedIndex) {
+  var colorStr = "#333";
+  if (index == selectedIndex) {
+    colorStr = "#f33";
+  }
+  return colorStr;
+}
+
+module.exports.decideSegmentationItemColor = decideSegmentationItemColor;
+module.exports.decideDemandItemFontColor = decideDemandItemFontColor;
 module.exports.testColor = "#0f0";

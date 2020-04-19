@@ -44,6 +44,15 @@ Page({
     });
   },
 
+  demandFilterItemClicked: function(event) {
+    let itemIndex = event.currentTarget.dataset.index;
+    console.log(itemIndex);
+    this.setData({
+      selectedIndexForDemandFilter: itemIndex
+    });
+    this.filterBackgroundClicked();
+  },
+
   filterBackgroundClicked: function(event) {
     this.setData({
       shouldShowFilterView: false
