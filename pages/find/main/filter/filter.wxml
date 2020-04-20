@@ -9,6 +9,7 @@
 			<icon class="iconfont icon-xiajiantou1" style="left: 3px; top: 3px; position: relative; font-size: 20px; background-color: #fff;" />
 		</view>
     <include src="filter_demand.wxml" />
+		<include src="filter_time.wxml" />
 	</view>
 
 </view>

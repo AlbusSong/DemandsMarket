@@ -1,0 +1,6 @@
+<scroll-view class="filter_time_scrollview" scroll-y="true" hidden="{{filter.decideHiddenStatus(1, selectedIndexForFilterView)}}">
+	<view class="filter_time_item_normal" wx:for="{{arrOfTimeFilterItem}}" style="color: {{filter.decideTimeItemFontColor(index, selectedIndexForTimeFilter)}};" wx:key="*this" catchtap="timeFilterItemClicked" data-index="{{index}}">
+		<span style="line-height: 40px">{{item}}</span>
+    <view style="background-color: #f1f1f7; height: 1px; width: 100%; position: relative; bottom: 0px;"></view>
+	</view>  
+</scroll-view>

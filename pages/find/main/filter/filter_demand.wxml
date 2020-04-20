@@ -1,7 +1,7 @@
 <!-- <view class="filter_demand_wrapper"> -->
-  <scroll-view class="filter_demand_scrollview" scroll-y="true"> 
-  <view class="filter_demand_item_normal" wx:for="{{arrOfDemandFilterItem}}" style="color: {{filter.decideDemandItemFontColor(index, selectedIndexForDemandFilter)}}" wx:key="*this" catchtap="demandFilterItemClicked" data-index="{{index}}">
-    <span style="line-height: 30px">{{item}}</span>
-  </view>
-  </scroll-view>  
+<scroll-view class="filter_demand_scrollview" scroll-y="true" hidden="{{filter.decideHiddenStatus(0, selectedIndexForFilterView)}}">
+	<view class="filter_demand_item_normal" wx:for="{{arrOfDemandFilterItem}}" style="color: {{filter.decideDemandItemFontColor(index, selectedIndexForDemandFilter)}}" wx:key="*this" catchtap="demandFilterItemClicked" data-index="{{index}}">
+		<span style="line-height: 30px">{{item}}</span>
+	</view>
+</scroll-view>
 <!-- </view> -->

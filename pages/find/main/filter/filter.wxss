@@ -1,6 +1,7 @@
 /* pages/find/filter/filter.wxss */
 
 @import "./filter_demand.wxss";
+@import "./filter_time.wxss";
 
 .filter_wrapper {
   background-color: #33333324;

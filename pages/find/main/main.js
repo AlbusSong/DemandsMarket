@@ -21,10 +21,13 @@ Page({
     ],
 
     // Filter View related
-    selectedIndexForFilterView: 0,
+    selectedIndexForFilterView: 1,
     shouldShowFilterView: true,
     arrOfDemandFilterItem: ['所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
     selectedIndexForDemandFilter: 0,
+
+    arrOfTimeFilterItem: ['不限', '今天发布', '三天内发布', '一周内发布', '一月内发布', '两月内发布'],
+    selectedIndexForTimeFilter: 0,
   },  
 
   functionAreaClicked: function(event) {
@@ -51,6 +54,13 @@ Page({
       selectedIndexForDemandFilter: itemIndex
     });
     this.filterBackgroundClicked();
+  },
+
+  timeFilterItemClicked: function(event) {
+    let itemIndex = event.currentTarget.dataset.index;
+    this.setData({
+      selectedIndexForTimeFilter: itemIndex
+    });
   },
 
   filterBackgroundClicked: function(event) {
