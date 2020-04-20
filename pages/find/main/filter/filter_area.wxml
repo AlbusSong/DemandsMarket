@@ -1,0 +1,5 @@
+<scroll-view class="filter_area_scrollview" scroll-y="true" hidden="{{filter.decideHiddenStatus(3, selectedIndexForFilterView)}}">
+	<view class="filter_area_item_normal" wx:for="{{arrOfAreaFilterItem}}" style="color: {{filter.decideAreaItemFontColor(index, selectedIndexForAreaFilter)}}" wx:key="*this" catchtap="areaFilterItemClicked" data-index="{{index}}">
+		<span style="line-height: 30px">{{item}}</span>
+	</view>
+</scroll-view>

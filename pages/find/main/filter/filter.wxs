@@ -22,6 +22,14 @@ var decideStatusItemFontColor = function(index, selectedIndex) {
   return colorStr;
 }
 
+var decideAreaItemFontColor = function(index, selectedIndex) {
+  var colorStr = "#333";
+  if (index == selectedIndex) {
+    colorStr = "#f33";
+  }
+  return colorStr;
+}
+
 var decideTimeItemFontColor = function(index, selectedIndex) {
   var colorStr = "#333";
   if (index == selectedIndex) {
@@ -45,5 +53,6 @@ module.exports.decideSegmentationItemColor = decideSegmentationItemColor;
 module.exports.decideDemandItemFontColor = decideDemandItemFontColor;
 module.exports.decideTimeItemFontColor = decideTimeItemFontColor;
 module.exports.decideStatusItemFontColor = decideStatusItemFontColor;
+module.exports.decideAreaItemFontColor = decideAreaItemFontColor;
 module.exports.decideHiddenStatus = decideHiddenStatus;
 module.exports.testColor = "#0f0";

@@ -21,9 +21,9 @@ Page({
     ],
 
     // Filter View related
-    selectedIndexForFilterView: 2,
+    selectedIndexForFilterView: 3,
     shouldShowFilterView: true,
-    arrOfDemandFilterItem: ['所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
+    arrOfDemandFilterItem: ['所有', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西',],
     selectedIndexForDemandFilter: 0,
 
     arrOfTimeFilterItem: ['不限', '今天发布', '三天内发布', '一周内发布', '一月内发布', '两月内发布'],
@@ -31,6 +31,9 @@ Page({
 
     arrOfStatusFilterItem: ['不限', '对接中', '待预审', '跟进中', '已对接'],
     selectedIndexForStatusFilter: 0,
+
+    arrOfAreaFilterItem: ['所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
+    selectedIndexForAreaFilter: 0,
   },  
 
   functionAreaClicked: function(event) {
@@ -70,6 +73,13 @@ Page({
     let itemIndex = event.currentTarget.dataset.index;
     this.setData({
       selectedIndexForStatusFilter: itemIndex
+    });
+  },
+
+  areaFilterItemClicked: function(event) {
+    let itemIndex = event.currentTarget.dataset.index;
+    this.setData({
+      selectedIndexForAreaFilter: itemIndex
     });
   },
 

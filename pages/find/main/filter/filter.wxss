@@ -3,6 +3,7 @@
 @import "./filter_demand.wxss";
 @import "./filter_time.wxss";
 @import "./filter_status.wxss";
+@import "./filter_area.wxss";
 
 .filter_wrapper {
   background-color: #33333324;
