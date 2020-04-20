@@ -2,6 +2,7 @@
 
 @import "./filter_demand.wxss";
 @import "./filter_time.wxss";
+@import "./filter_status.wxss";
 
 .filter_wrapper {
   background-color: #33333324;

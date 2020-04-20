@@ -1,0 +1,6 @@
+<scroll-view class="filter_status_scrollview" scroll-y="true" hidden="{{filter.decideHiddenStatus(2, selectedIndexForFilterView)}}">
+	<view class="filter_status_item_normal" wx:for="{{arrOfStatusFilterItem}}" style="color: {{filter.decideStatusItemFontColor(index, selectedIndexForStatusFilter)}};" wx:key="*this" catchtap="statusFilterItemClicked" data-index="{{index}}">
+		<span style="line-height: 40px">{{item}}</span>
+    <view style="background-color: #f1f1f7; height: 1px; width: 100%; position: relative; bottom: 0px;"></view>
+	</view>  
+</scroll-view>

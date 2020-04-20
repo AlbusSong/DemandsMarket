@@ -10,6 +10,7 @@
 		</view>
     <include src="filter_demand.wxml" />
 		<include src="filter_time.wxml" />
+		<include src="filter_status.wxml" />
 	</view>
 
 </view>
