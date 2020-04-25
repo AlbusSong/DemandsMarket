@@ -22,7 +22,7 @@ Page({
 
     // Filter View related
     selectedIndexForFilterView: 3,
-    shouldShowFilterView: true,
+    shouldShowFilterView: false,
     arrOfDemandFilterItem: ['所有', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西',],
     selectedIndexForDemandFilter: 0,
 
@@ -34,7 +34,13 @@ Page({
 
     arrOfAreaFilterItem: ['所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
     selectedIndexForAreaFilter: 0,
-  },  
+  },
+
+  // Demand market tableview
+  demand_market_tableview_cell_clicked: function(event) {
+    let itemIndex = event.currentTarget.dataset.index;
+    console.log(itemIndex);
+  },
 
   functionAreaClicked: function(event) {
     let itemIndex = Math.floor(4 * event.detail.x/wx.getSystemInfoSync().windowWidth);    
