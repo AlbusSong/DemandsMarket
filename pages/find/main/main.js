@@ -40,6 +40,9 @@ Page({
   demand_market_tableview_cell_clicked: function(event) {
     let itemIndex = event.currentTarget.dataset.index;
     console.log(itemIndex);
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
   },
 
   functionAreaClicked: function(event) {
