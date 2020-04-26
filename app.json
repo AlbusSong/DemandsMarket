@@ -3,7 +3,9 @@
     "pages/find/main/main",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/find/detail/detail"
+    "pages/find/detail/detail",
+    "pages/post/main/main",
+    "pages/mine/authorize/authorize"
   ],
   "window": {
     "navigationBarTitleText": "需求大厅"
@@ -15,7 +17,7 @@
         "text": "找需求"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/post/main/main",
         "text": "发需求"
       },
       {
