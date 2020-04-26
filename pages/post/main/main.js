@@ -5,7 +5,14 @@ Page({
    * Page initial data
    */
   data: {
+    banner_image_url:"https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
 
+    arrOfDemandCategoryItem: ['产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
+  },
+
+  categoryItemCellClicked: function(event) {
+    let itemIndex = event.currentTarget.dataset.index;
+    console.log(itemIndex);
   },
 
   /**
@@ -26,9 +33,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    wx.redirectTo({
-      url: '../../mine/authorize/authorize',
-    })
+    // wx.redirectTo({
+    //   url: '../../mine/authorize/authorize',
+    // })
   },
 
   /**

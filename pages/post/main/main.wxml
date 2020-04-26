@@ -1,2 +1,19 @@
 <!--pages/post/main/main.wxml-->
-<text>pages/post/main/main.wxml</text>
+
+<wxs src="../../../global_tool.wxs" module="global_tool" />
+
+<view class="post_main_top_image">
+	<image src="{{banner_image_url}}" mode="aspectFill" class="post_main_top_image post_main_top_image_img">
+	</image>
+</view>
+<scroll-view class="tableviewArea" scroll-y="true">
+  <view class="categoryItemHeader" style="line-height: 30px">
+    您需要的服务类型是？
+  </view>
+  <view wx:for="{{arrOfDemandCategoryItem}}" wx:key="*this" class="categoryItemCell" style="background-color: {{global_tool.whiteColor()}}" catchtap="categoryItemCellClicked" data-index="{{index}}">
+    <view style="height: 1px; background-color: #f1f1f7; position: relative; top: 0px;"></view> 
+    <view style="line-height: 36px; padding-left: 10px;">
+      {{item}}
+    </view>       
+	</view>
+</scroll-view>
