@@ -1,0 +1,31 @@
+<!--pages/post/create/create.wxml-->
+<view class="demandTitleCell">
+  <view style="background-color: #fff; width: 30%; padding-left: 10px; height:40px; line-height: 40px; display: inline-block; vertical-align: top;">需求标题：</view> 
+  <input class="demandTitleCellInput" placeholder="请填写"></input>
+  <!-- <view style="height: 1px; background-color: #f1f1f7; position: absolute; top: 39px; left: 0px; width: 100%"></view>  -->
+</view>
+<view style="height: 1px; background-color: #f1f1f7; width: 100%;"></view> 
+<view class="demandDescriptionCell">
+  <view style="background-color: #fff; width: 30%; padding-left: 10px; height:40px; line-height: 40px; vertical-align: top;">需求描述：</view>
+  <textarea class="demandDescriptionCellTextArea" maxlength="500" placeholder="请详细描述信息，有助于精准匹配需求"></textarea>
+  <!-- <view style="height: 1px; background-color: #f1f1f7; width: 100%; position: absolute; bottom: 0px;"></view>  -->
+</view>
+<view style="height: 1px; background-color: #f1f1f7; width: 100%;"></view> 
+<view class="demandExpireDateCell">
+  <view style="background-color: #fff; width: 30%; padding-left: 10px; height:40px; line-height: 40px; display: inline-block; vertical-align: center; font-size: 15px; color: #333;">结束时间：</view>
+  <view style="background-color: #fff; height:40px; line-height: 40px; display: inline-block; width: 65%; font-size: 15px; text-align: right; color: #666;">
+    请选择
+  </view>  
+</view>
+<view style="height: 1px; background-color: #f1f1f7; width: 100%;"></view> 
+<view class="chooseSpecialityCell">
+  <view style="background-color: #fff; width: 30%; padding-left: 10px; height:40px; line-height: 40px; display: inline-block; vertical-align: center; font-size: 15px; color: #333;">所属行业：</view>
+  <view style="background-color: #fff; height:40px; line-height: 40px; display: inline-block; width: 65%; font-size: 15px; text-align: right; color: #666;" catchtap="tryToChooseSpeciality">
+    请选择 >
+  </view>
+  <view wx:if="{{shouldShowChosenSpecialities}}" class="chooseSpecialityCellContent">
+    <span>轨道交通</span>
+  </view>
+</view>
+<view style="height: 1px; background-color: #f1f1f7; width: 100%;"></view> 
+<button type="submit" hover-class="submit-button-hover" >提交</button>

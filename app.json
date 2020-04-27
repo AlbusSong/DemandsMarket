@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/find/detail/detail",
     "pages/post/main/main",
-    "pages/mine/authorize/authorize"
+    "pages/mine/authorize/authorize",
+    "pages/post/create/create"
   ],
   "window": {
     "navigationBarTitleText": "需求大厅"
