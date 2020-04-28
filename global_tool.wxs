@@ -11,6 +11,25 @@ var whiteColor = function() {
   return "#fff";
 }
 
-module.exports.randomColor = randomColor;
-module.exports.mainColor = "#0a0da8";
-module.exports.whiteColor = whiteColor;
+var siblingColor = function(index = 0, grayFirst = false) {
+  if (index % 2 == 0) {
+    if (grayFirst) {
+      return "#f1f1f7";
+    } else {
+      return "#ffffff";
+    }
+  } else {
+    if (grayFirst) {
+      return "#ffffff";
+    } else {
+      return "#f1f1f7";
+    }
+  }
+}
+
+module.exports = {
+  randomColor: randomColor,
+  whiteColor: whiteColor,
+  siblingColor: siblingColor,
+  mainColor: "#0a0da8",
+}

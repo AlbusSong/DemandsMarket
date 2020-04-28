@@ -1,0 +1,11 @@
+var getHiddenStatusForSpecialitiesSelection = function (arr, index) {
+  var result = true;
+  if (arr.indexOf(index) > -1) {
+    result = false;
+  }
+  return result;
+}
+
+module.exports = {
+  getHiddenStatusForSpecialitiesSelection: getHiddenStatusForSpecialitiesSelection
+}

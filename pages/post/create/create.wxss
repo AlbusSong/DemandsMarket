@@ -1,5 +1,7 @@
 /* pages/post/create/create.wxss */
 
+@import "./selectSpecialitiesView/selectSpecialitiesView.wxss";
+
 .demandTitleCell {
   background-color: #fff;  
   width: 100%;
@@ -72,15 +74,3 @@ button[type="submit"]{
 button.submit-button-hover {
   background-color: #df5454;
 }
-
-/* .submitButton {
-  background-color: #d62f2f;
-  height: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  text-align: center;
-  color: #fff;
-} */

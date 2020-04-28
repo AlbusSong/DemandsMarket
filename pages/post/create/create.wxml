@@ -1,4 +1,8 @@
 <!--pages/post/create/create.wxml-->
+
+<wxs src="../../../global_tool.wxs" module="global_tool" />
+<wxs src="./create.wxs" module="create" />
+
 <view class="demandTitleCell">
   <view style="background-color: #fff; width: 30%; padding-left: 10px; height:40px; line-height: 40px; display: inline-block; vertical-align: top;">需求标题：</view> 
   <input class="demandTitleCellInput" placeholder="请填写"></input>
@@ -31,3 +35,4 @@
 </view>
 <view style="height: 1px; background-color: #f1f1f7; width: 100%;"></view> 
 <button type="submit" hover-class="submit-button-hover" >提交</button>
+<include src="./selectSpecialitiesView/selectSpecialitiesView.wxml" />
