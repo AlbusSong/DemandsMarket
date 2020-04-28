@@ -1,4 +1,7 @@
 // pages/post/create/create.js
+
+const util = require('./util.js')
+
 Page({
 
   /**
@@ -6,6 +9,7 @@ Page({
    */
   data: {
     shouldShowChosenSpecialities: false,
+    expiringDate: "2020-04-27",
   },
 
   tryToChooseSpeciality: function(event) {
@@ -14,11 +18,20 @@ Page({
     });
   },
 
+  datePickerChanged: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      expiringDate: e.detail.value,
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.setData({
+      expiringDate: util.getTodayDate(),
+    });    
   },
 
   /**
