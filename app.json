@@ -6,7 +6,8 @@
     "pages/find/detail/detail",
     "pages/post/main/main",
     "pages/mine/authorize/authorize",
-    "pages/post/create/create"
+    "pages/post/create/create",
+    "pages/mine/main/main"
   ],
   "window": {
     "navigationBarTitleText": "需求大厅"
@@ -22,7 +23,7 @@
         "text": "发需求"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/mine/main/main",
         "text": "我的"
       }
     ]

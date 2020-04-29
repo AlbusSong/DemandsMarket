@@ -1,0 +1,34 @@
+<!--pages/mine/main/main.wxml-->
+
+<wxs src="../../../global_tool.wxs" module="global_tool" />
+
+<view class="minePortraitView">
+  <image src="{{portrait_url}}" mode="aspectFill" class="minePortraitView minePortraitImage">
+	</image>
+</view>
+<view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
+<view class="mineMainCell">
+  <view class="mineMainCellTitle">用户名：</view>
+  <view class="mineMainCellSubtitle">Albus</view>
+</view>
+<view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
+<view class="mineMainCell">
+  <view class="mineMainCellTitle">登录账号：</view>
+  <view class="mineMainCellSubtitle">15503938218</view>
+</view>
+<view style="background-color: #f1f1f7; height: 10px; width: 100%;"></view>
+<view class="mineMainCell">
+  <view class="mineMainCellTitle">账户信息管理</view>  
+  <icon class="iconfont icon-youjiantou mineMainCellSubtitleArrow"  />
+</view>
+<view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
+<view class="mineMainCell">
+  <view class="mineMainCellTitle">我申请的对接</view>  
+  <icon class="iconfont icon-youjiantou mineMainCellSubtitleArrow"  />
+</view>
+<view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
+<view class="mineMainCell">
+  <view class="mineMainCellTitle">我发布的需求</view>  
+  <icon class="iconfont icon-youjiantou mineMainCellSubtitleArrow"  />
+</view>
+<view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
