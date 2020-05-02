@@ -1,4 +1,7 @@
 //app.js
+
+var httpDigger = require('./http_digger.js') 
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -28,24 +31,19 @@ App({
       }
     })
     // 获取用户信息
-    wx.getSetting({
+    wx.getSetting({      
       success: res => {
+        var that = this;
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: res => {
-              // console.log(res);
               this.globalData.userInfo = res.userInfo;
 
               var parameters = res.userInfo;
               parameters.wx_open_id = "a5";
-              wx.request({          
-                url: 'http://127.0.0.1:8080/v1.0/authorize/update_userinfo',
-                method: "POST",
-                data: parameters,
-                success (res) {
-                  console.log(res.data)
-                }
-              })
+              that.func.postServer("authorize/update_userinfo", parameters, function(responseJson) {
+                that.globalData.userInfo = responseJson.data;
+              },);
 
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res);
@@ -57,8 +55,12 @@ App({
     })
   },
 
-  globalData: {
+  globalData: {    
+    userInfo: null,
     token: null,
-    userInfo: null
+  },
+
+  func: {  
+    postServer: httpDigger.postServer  
   }
 })
