@@ -2,6 +2,4 @@
 <view class="authorizeHintTitle">
   授权之后才能操作
 </view>
-<view class="authorizeButton" catchtap="authorizeButtonClicked">
-  <span style="line-height: 40px;">授权</span>
-</view>
+<button type="authorize" hover-class="authorize-button-hover" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">授权</button>

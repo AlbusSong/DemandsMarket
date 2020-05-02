@@ -19,7 +19,12 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    if (getApp().globalData.userInfo == null) {
+      wx.redirectTo({
+        url: '../authorize/authorize',
+      });
+      return;
+    }   
   },
 
   /**

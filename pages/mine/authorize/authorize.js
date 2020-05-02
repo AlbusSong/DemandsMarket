@@ -8,13 +8,11 @@ Page({
 
   },
 
-  authorizeButtonClicked: function() {
-    console.log("authorizeButtonClicked");
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+  // 登录成功回调
+  onGotUserInfo: function (e) {
+    getApp().globalData.userInfo = e.detail.userInfo;
+    wx.switchTab({
+      url: '../../find/main/main',
     })
   },
 
@@ -22,7 +20,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    getApp().userInfoReadyCallback = res => {
+      console.log("userInfoReadyCallback: " + res);
+    };
   },
 
   /**

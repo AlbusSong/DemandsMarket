@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.authorizeButton {
+/* .authorizeButton {
   background-color: #a83933;
   margin: 20px;
   height: 40px;
@@ -17,4 +17,18 @@
   text-align: center;
   font-size: 16px;
   color: #fff;
+} */
+
+button[type="authorize"]{
+  background-color: #a83933;
+  margin: 20px;
+  height: 40px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+
+button.authorize-button-hover {
+  background-color: #df5454;
 }
