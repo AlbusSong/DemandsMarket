@@ -4,7 +4,7 @@ function postServer(uri, parameters = {}, success, shouldCache = false, failure 
     'content-type': 'application/json',
     'Authorization': 'Bearer ' + getApp().globalData.token,
   };
-  console.log(header)
+  // console.log(header)
   wx.request({  
       url: base_url + uri,
       data: parameters,  

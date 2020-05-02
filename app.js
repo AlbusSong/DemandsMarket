@@ -15,19 +15,10 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res);
         var that = this;
-        wx.request({          
-          url: 'http://127.0.0.1:8080/v1.0/authorize/login',
-          method: "POST",
-          data: {
-            code: "a5"
-          },
-          success (res) {
-            console.log(res.data)
-            if (res.data.data.token) {
-              that.globalData.token = res.data.data.token
-            }
-          }
-        })
+        that.func.postServer("authorize/login", {code: res.code}, function(responseJson) {
+          console.log("authorize/login: ", responseJson);
+          that.globalData.token = responseJson.data.token;
+        });
       }
     })
     // 获取用户信息
@@ -42,6 +33,7 @@ App({
               var parameters = res.userInfo;
               parameters.wx_open_id = "a5";
               that.func.postServer("authorize/update_userinfo", parameters, function(responseJson) {
+                console.log("authorize/update_userinfo: ", responseJson);
                 that.globalData.userInfo = responseJson.data;
               },);
 
