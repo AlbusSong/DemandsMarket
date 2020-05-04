@@ -1,11 +1,16 @@
-// pages/mine/main/main.js
+// pages/mine/company/reminder/reminder.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    portrait_url: "http://inews.gtimg.com/newsapp_bt/0/11048959590/1000/0",
+
+  },
+  
+  companyAuthorizeBtnClicked: function(event) {
+    // console.log(event);
+    
   },
 
   /**
@@ -19,19 +24,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    if (getApp().globalData.userInfo == null) {
-      wx.redirectTo({
-        url: '../authorize/authorize',
-      });
-      return;
-    }
 
-    if (getApp().globalData.userInfo.is_company == false) {
-      wx.navigateTo({
-        url: '../company/reminder/reminder',
-      })
-      return;
-    }
   },
 
   /**

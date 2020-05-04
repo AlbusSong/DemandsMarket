@@ -1,4 +1,4 @@
-/* pages/mine/authorize/authorize.wxss */
+/* pages/mine/company/reminder/reminder.wxss */
 
 .authorizeHintTitle {
   background-color: #fff;
@@ -6,6 +6,8 @@
   color: #333;
   text-align: center;
   margin-top: 25%;
+  /* padding-left: 30px;
+  padding-right: 30px; */
   width: 100%;
 }
 

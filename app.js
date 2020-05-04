@@ -35,7 +35,7 @@ App({
               that.func.postServer("authorize/update_userinfo", parameters, function(responseJson) {
                 console.log("authorize/update_userinfo: ", responseJson);
                 that.globalData.userInfo = responseJson.data;
-              },);
+              }, false);
 
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res);

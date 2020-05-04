@@ -1,0 +1,5 @@
+<!--pages/mine/company/reminder/reminder.wxml-->
+<view class="authorizeHintTitle">
+  企业认证后才能进行发布需求等操作
+</view>
+<button type="authorize" hover-class="authorize-button-hover" catchtap="companyAuthorizeBtnClicked">企业认证</button>
