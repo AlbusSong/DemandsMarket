@@ -8,7 +8,8 @@
     "pages/mine/authorize/authorize",
     "pages/post/create/create",
     "pages/mine/main/main",
-    "pages/mine/company/reminder/reminder"
+    "pages/mine/company/reminder/reminder",
+    "pages/mine/company/submit/submit"
   ],
   "window": {
     "navigationBarTitleText": "需求大厅"

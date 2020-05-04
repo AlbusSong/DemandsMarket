@@ -120,14 +120,15 @@ selectResult: function (e) {
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    wx.navigateTo({
+      url: '../../mine/company/submit/submit',
+    });
   },
 
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
-
+  onShow: function () {    
   },
 
   /**

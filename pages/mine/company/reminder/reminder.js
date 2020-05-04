@@ -10,7 +10,9 @@ Page({
   
   companyAuthorizeBtnClicked: function(event) {
     // console.log(event);
-    
+    wx.navigateTo({
+      url: '../submit/submit',
+    })
   },
 
   /**

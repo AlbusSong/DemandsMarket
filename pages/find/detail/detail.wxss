@@ -1,7 +1,7 @@
 /* pages/find/detail/detail.wxss */
 
 .tableviewArea {
-  background-color: #0ff;
+  background-color: #fff;
   position: absolute;
   width: 100%;
   top: 0;

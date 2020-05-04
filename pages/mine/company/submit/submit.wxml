@@ -1,0 +1,94 @@
+<!--pages/mine/company/submit/submit.wxml-->
+<scroll-view class="companySubmitPageTableview" scroll-y="true">
+	<view class="ocrButtonArea">
+		<button type="ocr" hover-class="ocr-button-hover" catchtap="ocrButtonClicked">OCR扫描营业执照</button>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			企业名称：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyName}}" placeholder="输入企业名称"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			法定代表人姓名：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyOwnerName}}" placeholder="法定代表人姓名"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			注册号：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyRegisterNo}}" placeholder="注册号"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			编号：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="编号"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			公司类型：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="公司类型"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			经营范围：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="经营范围"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			公司所在省市：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="选择省市"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			公司详细地址：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="公司详细地址"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			注册资本（万）：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="注册资本"></input>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			注册日期：
+		</view>
+		<picker class="companySubmitPageTableviewCellDateInput" mode="date" model:value="{{registerDate}}" start="2010-01-01" end="{{registerDate}}" bindchange="datePickerChanged">
+			<view>
+				{{registerDate}}
+			</view>
+		</picker>
+	</view>
+	<view class="separatorLine"></view>
+	<view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			营业期限至：
+		</view>
+		<picker class="companySubmitPageTableviewCellDateInput" mode="date" model:value="{{expiringDate}}" start="{{expiringDate}}" end="2039-12-31" bindchange="datePickerChanged">
+			<view>
+				{{registerDate}}
+			</view>
+		</picker>
+	</view>
+</scroll-view>
+<view class="functionArea">
+	<button type="submit" hover-class="submit-button-hover" catchtap="submitButtonClicked">提交认证</button>
+</view>
