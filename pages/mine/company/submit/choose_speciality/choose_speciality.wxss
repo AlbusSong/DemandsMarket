@@ -1,4 +1,4 @@
-.wrapper {
+.choose_speciality_wrapper {
   background-color: #33333345;
   width: 100%;
   height: 100%;
@@ -43,20 +43,31 @@
 }
 
 .selectSpecialitiesTableview {
-  background-color: #0ff;
+  background-color: #fff;
   position: absolute;
-  top: 30px;
+  padding-top: 10px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
 
-.selectSpecialitiesItemCell {
-  background-color: #fff;
+.selectSpecialitiesCollectionViewCell {
+  background-color: #f1f1f7;
+  width: fit-content;
+  height: 30px;
+  display: inline-block;  
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-color: #606;
+  border-width: 1px;
+  border-radius: 4px;
   color: #333;
-  font-size: 15px;
-  height: 35px;
-  width: 100%;
-  position: relative;
-  top: 0;
+  font-size: 13px;
+  padding-left: 10px;
+  padding-right: 10px;  
+  text-align:center;
 }

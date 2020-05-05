@@ -1,0 +1,11 @@
+var decideSelectedCompanySpecialityItemFontColor = function(index, selectedIndex) {
+  var colorStr = "#333";
+  if (index == selectedIndex) {
+    colorStr = "#f33";
+  }
+  return colorStr;
+}
+
+module.exports = {
+  decideSelectedCompanySpecialityItemFontColor: decideSelectedCompanySpecialityItemFontColor
+}

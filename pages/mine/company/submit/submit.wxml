@@ -1,4 +1,7 @@
 <!--pages/mine/company/submit/submit.wxml-->
+
+<wxs src="./submit.wxs" module="tool" />
+
 <scroll-view class="companySubmitPageTableview" scroll-y="true">
 	<view class="ocrButtonArea">
 		<button type="ocr" hover-class="ocr-button-hover" catchtap="ocrButtonClicked">OCR扫描营业执照</button>
@@ -34,9 +37,11 @@
 	<view class="separatorLine"></view>
 	<view class="companySubmitPageTableviewCell">
 		<view class="companySubmitPageTableviewCellTitle">
-			公司类型：
+			所属行业：
 		</view>
-		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="公司类型"></input>
+    <view class="companySubmitPageTableviewCellTextInput" catchtap="tryToChooseCompanySpeciality">
+      {{selectedCompanySpeciality}}
+    </view>
 	</view>
 	<view class="separatorLine"></view>
 	<view class="companySubmitPageTableviewCell">
@@ -50,7 +55,11 @@
 		<view class="companySubmitPageTableviewCellTitle">
 			公司所在省市：
 		</view>
-		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="选择省市"></input>
+		<picker class="companySubmitPageTableviewCellDateInput" mode="region"  bindchange="cityPickerChanged">
+			<view>
+				{{provinceAndCity}}
+			</view>
+		</picker>
 	</view>
 	<view class="separatorLine"></view>
 	<view class="companySubmitPageTableviewCell">
@@ -88,7 +97,22 @@
 			</view>
 		</picker>
 	</view>
+  <view class="separatorLine" style="height: 20px;"></view>
+  <view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			联系人：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="联系人"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			联系方式：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="联系方式"></input>
+	</view>
 </scroll-view>
 <view class="functionArea">
 	<button type="submit" hover-class="submit-button-hover" catchtap="submitButtonClicked">提交认证</button>
 </view>
+<include src="./choose_speciality/choose_speciality.wxml" />

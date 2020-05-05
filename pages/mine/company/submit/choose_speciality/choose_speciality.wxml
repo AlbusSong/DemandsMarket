@@ -1,0 +1,9 @@
+<view wx:if="{{shouldShowChooseSpecialityView}}" class="choose_speciality_wrapper" catchtap="choose_speciality_wrapper_clicked">
+  <view class="selectSpecialitiesView">
+    <scroll-view class="selectSpecialitiesTableview" scroll-y="true">
+      <view class="selectSpecialitiesCollectionViewCell" wx:for="{{companySpecialityList}}" style="color: {{tool.decideSelectedCompanySpecialityItemFontColor(index, selectedIndexForCompanySpeciality)}}" wx:key="unique" catchtap="companySpecialityItemClicked" data-index="{{index}}">
+		    <span style="line-height: 30px">{{item.speciality}}</span>
+	    </view>
+    </scroll-view>
+  </view>
+</view>

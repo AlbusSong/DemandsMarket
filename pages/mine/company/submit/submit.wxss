@@ -1,5 +1,7 @@
 /* pages/mine/company/submit/submit.wxss */
 
+@import "./choose_speciality/choose_speciality.wxss";
+
 .companySubmitPageTableview {
   background-color: #fff;
   position: absolute;
@@ -53,6 +55,7 @@
   top: 0px;
   text-align: right;
   display: inline-block;
+  line-height: 40px;
 }
 
 .companySubmitPageTableviewCellDateInput {
