@@ -107,9 +107,16 @@
   <view class="separatorLine"></view>
   <view class="companySubmitPageTableviewCell">
 		<view class="companySubmitPageTableviewCellTitle">
-			联系方式：
+			手机号：
 		</view>
-		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="联系方式"></input>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="手机号"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="companySubmitPageTableviewCell">
+		<view class="companySubmitPageTableviewCellTitle">
+			邮箱：
+		</view>
+		<input class="companySubmitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="邮箱"></input>
 	</view>
 </scroll-view>
 <view class="functionArea">
