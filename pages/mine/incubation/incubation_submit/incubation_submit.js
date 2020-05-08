@@ -1,23 +1,23 @@
-// pages/mine/certificate_management/certificate_management.js
+// pages/mine/incubation/incubation_submit/incubation_submit.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    hasAppliedForBusinessLicense: true,
-    hasAppliedForIncubation: false,
-    hasAppliedForIncubationQualification: false,
+
   },
 
-  tryToVerifyIncubatin: function() {
-    wx.navigateTo({
-      url: '../incubation/incubation_submit/incubation_submit',
-    })
-  },
-
-  tryToVerifyIncubatinQualification: function() {
-
+  ocrButtonClicked: function() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        console.log("tempFilePaths: ", tempFilePaths)
+      }
+    });
   },
 
   /**

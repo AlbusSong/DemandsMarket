@@ -1,0 +1,49 @@
+<scroll-view class="submitPageTableview" scroll-y="true">
+	<view class="ocrButtonArea">
+		<button type="ocr" hover-class="ocr-button-hover" catchtap="ocrButtonClicked">OCR扫描孵化协议书</button>
+	</view>	
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			孵化类型：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="孵化类型"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			注册地址迁入基地：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="是"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			讯飞孵化资源投入：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="资源投入"></input>
+	</view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			关联讯飞内部部门：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="关联讯飞内部部门"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			核心价值：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="核心价值"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			迁入日期：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="迁入日期"></input>
+	</view>
+</scroll-view>
+<view class="functionArea">
+	<button type="submit" hover-class="submit-button-hover" catchtap="submitButtonClicked">提交认证</button>
+</view>
