@@ -1,25 +1,11 @@
-// pages/mine/certificate_management/certificate_management.js
+// pages/mine/incubatiion_qualification/reminder/reminder.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    hasAppliedForBusinessLicense: true,
-    hasAppliedForIncubation: false,
-    hasAppliedForIncubationQualification: false,
-  },
 
-  tryToVerifyIncubatin: function() {
-    wx.navigateTo({
-      url: '../incubation/incubation_submit/incubation_submit',
-    })
-  },
-
-  tryToVerifyIncubatinQualification: function() {
-    wx.navigateTo({
-      url: '../incubatiion_qualification/incubatiion_qualification/incubatiion_qualification',
-    })
   },
 
   /**

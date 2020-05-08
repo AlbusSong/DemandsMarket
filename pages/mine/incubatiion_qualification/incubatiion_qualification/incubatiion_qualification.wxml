@@ -1,0 +1,49 @@
+<scroll-view class="submitPageTableview" scroll-y="true">
+	<view class="ocrButtonArea">
+		<button type="ocr" hover-class="ocr-button-hover" catchtap="ocrButtonClicked">OCR扫描入孵合同书</button>
+	</view>	
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			起始日期：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="起始日期"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			截止日期：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="截止日期"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			收费标准：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="收费标准"></input>
+	</view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			租金（元/月）：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="输入数字"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			累计已回款（元）：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="输入数字"></input>
+	</view>
+  <view class="separatorLine"></view>
+  <view class="submitPageTableviewCell">
+		<view class="submitPageTableviewCellTitle">
+			欠款（元）：
+		</view>
+		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="输入数字"></input>
+	</view>
+</scroll-view>
+<view class="functionArea">
+	<button type="submit" hover-class="submit-button-hover" catchtap="submitButtonClicked">提交认证</button>
+</view>

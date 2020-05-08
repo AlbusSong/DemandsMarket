@@ -12,7 +12,9 @@
     "pages/mine/company/submit/submit",
     "pages/mine/certificate_management/certificate_management",
     "pages/mine/incubation/incubation_submit/incubation_submit",
-    "pages/mine/incubation/reminder/reminder"
+    "pages/mine/incubation/reminder/reminder",
+    "pages/mine/incubatiion_qualification/incubatiion_qualification/incubatiion_qualification",
+    "pages/mine/incubatiion_qualification/reminder/reminder"
   ],
   "window": {
     "navigationBarTitleText": "需求大厅",
