@@ -13,14 +13,19 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res);
+        console.log("code: ", res.code);
         var that = this;
         that.func.postServer("authorize/login", {code: res.code}, function(responseJson) {
           console.log("authorize/login: ", responseJson);
           that.globalData.token = responseJson.data.token;
+
+          that.getUserInfoFromServer();
         });
       }
-    })
+    })    
+  },
+
+  getUserInfoFromServer: function() {
     // 获取用户信息
     wx.getSetting({      
       success: res => {
@@ -31,7 +36,6 @@ App({
               this.globalData.userInfo = res.userInfo;
 
               var parameters = res.userInfo;
-              parameters.wx_open_id = "a5";
               that.func.postServer("authorize/update_userinfo", parameters, function(responseJson) {
                 console.log("authorize/update_userinfo: ", responseJson);
                 that.globalData.userInfo = responseJson.data;
@@ -44,7 +48,7 @@ App({
           })
         }
       }
-    })
+    });    
   },
 
   globalData: {    

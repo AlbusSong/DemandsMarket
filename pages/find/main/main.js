@@ -120,9 +120,12 @@ selectResult: function (e) {
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
+    // wx.navigateTo({
+    //   url: '../../mine/company/submit/submit',
+    // });
     wx.navigateTo({
-      url: '../../mine/company/submit/submit',
-    });
+      url: '../../mine/certificate_management/certificate_management',
+    })
   },
 
   /**

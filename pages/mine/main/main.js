@@ -8,30 +8,36 @@ Page({
     portrait_url: "http://inews.gtimg.com/newsapp_bt/0/11048959590/1000/0",
   },
 
+  gotoCertificateManagementPage: function() {
+    wx.navigateTo({
+      url: '../certificate_management/certificate_management',
+    })
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
 
-  },
+  },  
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    if (getApp().globalData.userInfo == null) {
-      wx.redirectTo({
-        url: '../authorize/authorize',
-      });
-      return;
-    }
+    // if (getApp().globalData.userInfo == null) {
+    //   wx.redirectTo({
+    //     url: '../authorize/authorize',
+    //   });
+    //   return;
+    // }
 
-    if (getApp().globalData.userInfo.is_company == false) {
-      wx.navigateTo({
-        url: '../company/reminder/reminder',
-      })
-      return;
-    }
+    // if (getApp().globalData.userInfo.is_company == false) {
+    //   wx.navigateTo({
+    //     url: '../company/reminder/reminder',
+    //   })
+    //   return;
+    // }
   },
 
   /**

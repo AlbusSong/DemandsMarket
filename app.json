@@ -9,10 +9,13 @@
     "pages/post/create/create",
     "pages/mine/main/main",
     "pages/mine/company/reminder/reminder",
-    "pages/mine/company/submit/submit"
+    "pages/mine/company/submit/submit",
+    "pages/mine/certificate_management/certificate_management"
   ],
   "window": {
-    "navigationBarTitleText": "需求大厅"
+    "navigationBarTitleText": "需求大厅",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [
