@@ -1,0 +1,48 @@
+/* pages/mine/certificate_management/certificate_management.wxss */
+
+.certificationManagementWrapper {
+  background-color: #fff;
+  font-size: 15px;
+  color: #333;
+}
+
+.certication_title {
+  color: #666;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.seperatorLine {
+  background-color: #e1e1e7;
+  height: 1px;
+  /* margin-top: 10px; */
+}
+
+.cardItemView {
+  background-color: #eee;
+  /* height: 80px; */
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.cardItemViewTitle1 {
+  font-style: 16px;
+  font-weight: 500;
+}
+
+button[type="certificate"]{
+  background-color: #a83933;
+  margin: 20px;
+  height: 40px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+
+button.certificate-button-hover {
+  background-color: #df5454;
+}

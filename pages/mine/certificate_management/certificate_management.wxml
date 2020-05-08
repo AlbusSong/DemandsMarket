@@ -1,0 +1,41 @@
+<!--pages/mine/certificate_management/certificate_management.wxml-->
+<view class="certificationManagementWrapper">
+	<view>
+		<view class="certication_title">
+			企业认证
+		</view>
+		<view class="cardItemView" wx:if="{{hasAppliedForBusinessLicense}}">
+			<view class="cardItemViewTitle1">谋谟膜公司</view>
+			<view>认证状态：<span>审核中</span></view>
+			<view>提交审核时间：<span>2020-05-06 13:23</span></view>
+		</view>
+		<button wx:if="{{!hasAppliedForBusinessLicense}}" type="certificate" hover-class="certificate-button-hover" catchtap="companyAuthorizeBtnClicked">去进行企业认证</button>
+		<view class="seperatorLine"></view>
+	</view>
+
+	<view>
+		<view class="certication_title">
+			孵化认证
+		</view>
+		<view class="cardItemView" wx:if="{{hasAppliedForIncubation}}">
+			<view class="cardItemViewTitle1">xxx孵化器</view>
+			<view>认证状态：<span>审核中</span></view>
+			<view>提交审核时间：<span>2020-05-06 13:23</span></view>
+		</view>
+		<button wx:if="{{!hasAppliedForIncubation}}" type="certificate" hover-class="certificate-button-hover" catchtap="tryToVerifyIncubatin">去进行孵化认证</button>
+		<view class="seperatorLine"></view>
+	</view>
+
+  <view>
+		<view class="certication_title">
+			孵化资质认证
+		</view>
+		<view class="cardItemView" wx:if="{{hasAppliedForIncubationQualification}}">
+			<view class="cardItemViewTitle1">xxx孵化器资质</view>
+			<view>认证状态：<span>审核中</span></view>
+			<view>提交审核时间：<span>2020-05-06 13:23</span></view>
+		</view>
+		<button wx:if="{{!hasAppliedForIncubationQualification}}" type="certificate" hover-class="certificate-button-hover" catchtap="tryToVerifyIncubatinQualification">去进行孵化资质认证</button>
+		<view class="seperatorLine"></view>
+	</view>
+</view>
