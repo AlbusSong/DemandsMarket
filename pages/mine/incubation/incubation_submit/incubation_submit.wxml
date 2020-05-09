@@ -57,7 +57,7 @@
 		<view class="submitPageTableviewCellTitle">
 			迁入日期：
 		</view>
-		<picker class="submitPageTableviewCellDateInput" mode="date" model:value="{{movedInDate}}" start="2010-01-01" end="{{movedInDate}}" bindchange="datePickerChanged">
+		<picker class="submitPageTableviewCellDateInput" mode="date" model:value="{{movedInDate}}" start="2010-01-01" end="{{movedInDate}}">
 			<view>
 				{{movedInDate}}
 			</view>

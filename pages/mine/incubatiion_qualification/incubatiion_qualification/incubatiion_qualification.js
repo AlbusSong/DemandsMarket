@@ -5,7 +5,11 @@ Page({
    * Page initial data
    */
   data: {
+    beginingDate: "请选择 >",
+    endingDate: "请选择 >",
 
+    chargingTypes: ["工位", "面积"],
+    selectedIndexOfChargingType: 0,
   },
 
   ocrButtonClicked: function() {

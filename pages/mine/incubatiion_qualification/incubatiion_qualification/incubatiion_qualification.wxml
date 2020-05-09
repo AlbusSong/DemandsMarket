@@ -7,21 +7,33 @@
 		<view class="submitPageTableviewCellTitle">
 			起始日期：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="起始日期"></input>
+		<picker class="submitPageTableviewCellDateInput" mode="date" model:value="{{beginingDate}}" start="2010-01-01" end="{{beginingDate}}">
+			<view>
+				{{beginingDate}}
+			</view>
+		</picker>
 	</view>
   <view class="separatorLine"></view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
 			截止日期：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="截止日期"></input>
+		<picker class="submitPageTableviewCellDateInput" mode="date" model:value="{{endingDate}}" start="{{endingDate}}" end="2039-12-31">
+			<view>
+				{{endingDate}}
+			</view>
+		</picker>
 	</view>
   <view class="separatorLine"></view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
 			收费标准：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="收费标准"></input>
+		<picker class="submitPageTableviewCellSimplePickerInput" mode="selector" range="{{chargingTypes}}" model:value="{{selectedIndexOfChargingType}}">
+			<view>
+				{{chargingTypes[selectedIndexOfChargingType]}}
+			</view>
+		</picker>		
 	</view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
