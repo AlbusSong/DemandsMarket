@@ -1,0 +1,42 @@
+<!--pages/mine/my_demands/demand_detail/demand_detail.wxml-->
+<scroll-view class="tableview">
+  <view class="demandDetailTitle">
+    贵金属的采购需求
+  </view>
+  <view class="demandDetailNormalItem">
+    <view style="display: inline-block; vertical-align: top; width: 30%; background-color: #fff">需求分类：</view>
+    <view style="display: inline-block; vertical-align: top; width: 65%; background-color: #fff;">
+      原材料采购
+    </view>
+  </view>
+  <view class="demandDetailNormalItem">
+    <view style="display: inline-block; vertical-align: top; width: 30%; background-color: #fff">审核状态：</view>
+    <view style="display: inline-block; vertical-align: top; width: 65%; background-color: #fff;">
+      审核中
+    </view>
+  </view>
+  <view class="demandDetailNormalItem">
+    <view style="display: inline-block; vertical-align: top; width: 30%; background-color: #fff">所在地区：</view>
+    <view style="display: inline-block; vertical-align: top; width: 65%; background-color: #fff;">
+      江苏 苏州
+    </view>
+  </view>
+  <view class="demandDetailNormalItem">
+    <view style="display: inline-block; vertical-align: top; width: 30%; background-color: #fff">发布时间：</view>
+    <view style="display: inline-block; vertical-align: top; width: 65%; background-color: #fff;">
+      2020-05-07
+    </view>
+  </view>
+  <view class="demandDetailNormalItem">
+    <view style="display: inline-block; vertical-align: top; width: 30%; background-color: #fff">截止时间：</view>
+    <view style="display: inline-block; vertical-align: top; width: 65%; background-color: #fff;">
+      2020-08-07
+    </view>
+  </view>
+  <view class="demandDetailNormalItem">
+    <view style="vertical-align: top; width: 30%; background-color: #fff;">需求内容：</view>
+    <view class="demandDetailNormalItemContent">
+      he Kingdom of England – which after 1535 included Wales – ceased being a separate sovereign state on 1 May 1707, when the Acts of Union put into effect the terms agreed in the Treaty of Union the previous year, resulting in a political union with the Kingdom of Scotland to create the Kingdom of Great Britain.[14][15] In 1801, Great Britain was united with the Kingdom of Ireland (through another Act of Union) to become
+    </view>
+  </view>
+</scroll-view>

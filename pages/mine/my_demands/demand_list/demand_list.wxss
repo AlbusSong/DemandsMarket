@@ -11,7 +11,7 @@
 
 .demand_list_tableview_cell {
   background-color: #fff;
-  height: 120px;
+  height: 130px;
   position: relative;  
   bottom: 0;
 }
@@ -57,7 +57,7 @@
   font-size: 14px;
   color: #999;
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   right: 10px;
 }
 

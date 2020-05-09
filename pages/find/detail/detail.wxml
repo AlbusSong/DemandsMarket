@@ -10,7 +10,7 @@
   <view  wx:for="{{arrOfSubtitle}}" wx:key="*this" class="subtitleCell" style="background-color: {{global_tool.whiteColor()}}">
     <view>
       <view style="display: inline-block; vertical-align: top; width: 30%; background-color: {{global_tool.whiteColor()}}">{{item}}：</view>
-    <view style="display: inline-block; vertical-align: top; width: 65%; background-color: {{global_tool.whiteColor()}}">通用设备制造/专用设备制造/航天航空/航天航空</view>
+      <view style="display: inline-block; vertical-align: top; width: 65%; background-color: {{global_tool.whiteColor()}}">通用设备制造/专用设备制造/航天航空/航天航空</view>
     </view>
     <view style="height: 1px; background-color: #f1f1f7; position: relative; bottom: -7px;"></view>    
 	</view>

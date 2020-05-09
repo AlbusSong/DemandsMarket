@@ -1,4 +1,4 @@
-// pages/mine/my_demands/demand_list/demand_list.js
+// pages/mine/my_demands/demand_detail/demand_detail.js
 Page({
 
   /**
@@ -6,15 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  demandListItemClicked: function(event) {
-    let itemIndex = event.currentTarget.dataset.index;
-    console.log(itemIndex);
-
-    wx.navigateTo({
-      url: '../demand_detail/demand_detail',
-    })
   },
 
   /**

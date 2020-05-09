@@ -128,9 +128,9 @@ selectResult: function (e) {
     //   url: '../../mine/certificate_management/certificate_management',
     // });
 
-    wx.navigateTo({
-      url: '../../mine/my_demands/demand_list/demand_list',
-    })
+    // wx.navigateTo({
+    //   url: '../../mine/my_demands/demand_detail/demand_detail',
+    // })
   },
 
   /**

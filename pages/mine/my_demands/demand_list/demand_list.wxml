@@ -1,6 +1,6 @@
 <!--pages/mine/my_demands/demand_list/demand_list.wxml-->
 <scroll-view class="demand_list_tableview" scroll-y="true">
-  <view class="demand_list_tableview_cell" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="unique">
+  <view class="demand_list_tableview_cell" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="unique" catchtap="demandListItemClicked" data-index="{{index}}">
     <view class="separatorLine"></view>
     <view class="demand_list_tableview_cell_status">
       审核通过
