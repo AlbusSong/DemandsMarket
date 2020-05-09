@@ -1,11 +1,26 @@
 // pages/mine/incubation/incubation_submit/incubation_submit.js
+
+const global_tool = require('../../../../others/tool/global_tool')
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    incubationTypes: ["虚拟注册", "实际入驻"],
+    selectedIndexOfIncubationType: 0,
 
+    alreadyMovedIntoBaseOptions: ["是", "否"],
+    selectedIndexOfAlreadyMovedIntoBaseOption: 0,
+
+    desiredResourceTypes: ["讯飞技术", "生态链", "业务合作", "开放平台用户", "无"],
+    selectedIndexOfResourceType: 0,
+
+    coreValueTypes: ["人工智能相关", "高产值企业", "孵化第三方合作", "高新企业"],
+    selectedIndexOfCoreValueType: 0,
+
+    movedInDate: "请选择 >",
   },
 
   ocrButtonClicked: function() {
@@ -24,7 +39,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
   },
 
   /**

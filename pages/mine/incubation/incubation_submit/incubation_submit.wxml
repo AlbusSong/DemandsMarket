@@ -7,21 +7,33 @@
 		<view class="submitPageTableviewCellTitle">
 			孵化类型：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="孵化类型"></input>
+		<picker class="submitPageTableviewCellSimplePickerInput" mode="selector" range="{{incubationTypes}}" model:value="{{selectedIndexOfIncubationType}}">
+			<view>
+				{{incubationTypes[selectedIndexOfIncubationType]}}
+			</view>
+		</picker>		
 	</view>
   <view class="separatorLine"></view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
 			注册地址迁入基地：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="是"></input>
+		<picker class="submitPageTableviewCellSimplePickerInput" mode="selector" range="{{alreadyMovedIntoBaseOptions}}" model:value="{{selectedIndexOfAlreadyMovedIntoBaseOption}}">
+			<view>
+				{{alreadyMovedIntoBaseOptions[selectedIndexOfAlreadyMovedIntoBaseOption]}}
+			</view>
+		</picker>	
 	</view>
   <view class="separatorLine"></view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
 			讯飞孵化资源投入：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="资源投入"></input>
+		<picker class="submitPageTableviewCellSimplePickerInput" mode="selector" range="{{desiredResourceTypes}}" model:value="{{selectedIndexOfResourceType}}">
+			<view>
+				{{desiredResourceTypes[selectedIndexOfResourceType]}}
+			</view>
+		</picker>	
 	</view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
@@ -34,14 +46,22 @@
 		<view class="submitPageTableviewCellTitle">
 			核心价值：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="核心价值"></input>
+		<picker class="submitPageTableviewCellSimplePickerInput" mode="selector" range="{{coreValueTypes}}" model:value="{{selectedIndexOfResourceType}}">
+			<view>
+				{{coreValueTypes[selectedIndexOfCoreValueType]}}
+			</view>
+		</picker>	
 	</view>
   <view class="separatorLine"></view>
   <view class="submitPageTableviewCell">
 		<view class="submitPageTableviewCellTitle">
 			迁入日期：
 		</view>
-		<input class="submitPageTableviewCellTextInput" model:value="{{companyNo}}" placeholder="迁入日期"></input>
+		<picker class="submitPageTableviewCellDateInput" mode="date" model:value="{{movedInDate}}" start="2010-01-01" end="{{movedInDate}}" bindchange="datePickerChanged">
+			<view>
+				{{movedInDate}}
+			</view>
+		</picker>
 	</view>
 </scroll-view>
 <view class="functionArea">

@@ -70,6 +70,19 @@
   line-height: 40px;
 }
 
+.submitPageTableviewCellSimplePickerInput {
+  background-color: #fff;
+  height: 100%;
+  width: 58%;
+  /* margin-right: 10px; */
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  text-align: right;
+  display: inline-block;
+  line-height: 40px;
+}
+
 .separatorLine {
   background-color: #f1f1f7;
   height: 1px;
