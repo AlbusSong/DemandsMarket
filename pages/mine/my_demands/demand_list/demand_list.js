@@ -1,49 +1,25 @@
-// pages/mine/main/main.js
+// pages/mine/my_demands/demand_list/demand_list.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    portrait_url: "http://inews.gtimg.com/newsapp_bt/0/11048959590/1000/0",
-  },
 
-  gotoMyDemandsPage: function() {
-    wx.navigateTo({
-      url: '../my_demands/demand_list/demand_list',
-    });
   },
-
-  gotoCertificateManagementPage: function() {
-    wx.navigateTo({
-      url: '../certificate_management/certificate_management',
-    });
-  },  
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
 
-  },  
+  },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    // if (getApp().globalData.userInfo == null) {
-    //   wx.redirectTo({
-    //     url: '../authorize/authorize',
-    //   });
-    //   return;
-    // }
 
-    // if (getApp().globalData.userInfo.is_company == false) {
-    //   wx.navigateTo({
-    //     url: '../company/reminder/reminder',
-    //   })
-    //   return;
-    // }
   },
 
   /**

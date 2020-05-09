@@ -14,7 +14,8 @@
     "pages/mine/incubation/incubation_submit/incubation_submit",
     "pages/mine/incubation/reminder/reminder",
     "pages/mine/incubatiion_qualification/incubatiion_qualification/incubatiion_qualification",
-    "pages/mine/incubatiion_qualification/reminder/reminder"
+    "pages/mine/incubatiion_qualification/reminder/reminder",
+    "pages/mine/my_demands/demand_list/demand_list"
   ],
   "window": {
     "navigationBarTitleText": "需求大厅",

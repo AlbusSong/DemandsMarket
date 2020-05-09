@@ -27,7 +27,7 @@
   <icon class="iconfont icon-youjiantou mineMainCellSubtitleArrow"  />
 </view>
 <view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
-<view class="mineMainCell">
+<view class="mineMainCell" catchtap="gotoMyDemandsPage">
   <view class="mineMainCellTitle">我发布的需求</view>  
   <icon class="iconfont icon-youjiantou mineMainCellSubtitleArrow"  />
 </view>
