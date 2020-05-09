@@ -1,1 +1,70 @@
 /* pages/mine/my_demands/demand_list/demand_list.wxss */
+
+.demand_list_tableview {
+  background-color: #0f3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.demand_list_tableview_cell {
+  background-color: #fff;
+  height: 120px;
+  position: relative;  
+  bottom: 0;
+}
+
+.demand_list_tableview_cell_status {
+  background-color: #17b960;
+  width: 30%;
+  border-radius: 0;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.demand_list_tableview_cell_title {
+  font-size: 17px;
+  color: #333;
+  background-color: #fff;
+  width: 65%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.demand_list_tableview_cell_content {
+  font-size: 14px;
+  color: #666;
+  background-color: #fff;
+  /* height: 50px; */
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.demand_list_tableview_cell_publish_time {
+  background-color: #fff;
+  font-size: 14px;
+  color: #999;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.separatorLine {
+  background-color: #f1f1f7;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}

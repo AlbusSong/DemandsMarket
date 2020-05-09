@@ -123,8 +123,13 @@ selectResult: function (e) {
     // wx.navigateTo({
     //   url: '../../mine/company/submit/submit',
     // });
+    
+    // wx.navigateTo({
+    //   url: '../../mine/certificate_management/certificate_management',
+    // });
+
     wx.navigateTo({
-      url: '../../mine/certificate_management/certificate_management',
+      url: '../../mine/my_demands/demand_list/demand_list',
     })
   },
 
