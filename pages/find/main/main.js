@@ -7,6 +7,9 @@ Page({
    */
   data: {
     banner_image_url: "https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
+    
+    // 0: 备战状态（被隐藏不显示）；1：战斗中状态（转圈中）；2:退役（再也不需要显示，因为没有更多数据了）
+    loadMoreStatus: 0,
 
     searchContent: "",
     pageIndex: 0,
@@ -129,19 +132,24 @@ Page({
     console.log('select result', e.detail)
   },
 
-  onReachBottom: function () {
-    // this.getArticles(page);
-    console.log("lsjfalsjls");
-  },
+  getDataFromServer: function() {
+    if (this.data.loadMoreStatus == 2) {
+      return;
+    }
 
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
-    wx.showLoading({
-      title: '',
-      mask: true,
-    });
+    if (this.data.loadMoreStatus == 0 && this.data.pageIndex > 0) {
+      this.data.loadMoreStatus = 1;
+      this.setData({
+        loadMoreStatus: 1,
+      });
+    }
+
+    if (this.data.pageIndex == 0) {
+      wx.showLoading({
+        title: '',
+        mask: true,
+      });
+    }
     
     var params = {
       pageSize: 20,
@@ -164,12 +172,35 @@ Page({
       }
 
       wx.hideLoading();
-      that.data.arrOfData = that.data.arrOfData.concat(r.data);
+      let newData = r.data;
+      if (newData.length == 0) {
+        that.data.loadMoreStatus = 2;
+      } else {
+        that.data.loadMoreStatus = 0;
+        that.data.arrOfData = that.data.arrOfData.concat(newData);
+      }      
       that.setData({
-        arrOfData: that.data.arrOfData
+        loadMoreStatus: that.data.loadMoreStatus,
+        arrOfData: that.data.arrOfData,
       });
-      console.log("that.data.arrOfData: ", that.data.arrOfData);
     });
+  },
+
+  tryToLoadMore: function(event) {
+    this.data.pageIndex++;
+    this.getDataFromServer();
+  },
+
+  onReachBottom: function () {
+    // this.getArticles(page);
+    console.log("lsjfalsjls");
+  },
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad: function (options) {
+    this.getDataFromServer();
   },
 
   /**

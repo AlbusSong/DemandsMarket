@@ -1,4 +1,5 @@
 @import "../main/filter/filter.wxss";
+@import "../../../others/view/loadmore/loadmore.wxss";
 
 .find_main_top_searchbar {
   position: absolute;

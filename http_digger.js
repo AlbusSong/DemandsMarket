@@ -1,4 +1,5 @@
 const base_url = 'http://127.0.0.1:8080/v1.0/';
+// const base_url = "http://172.20.10.10/v1.0/"
 function postServer(uri, parameters = {}, success, shouldCache = false, failure = null) { 
   var header = {
     'content-type': 'application/json',
