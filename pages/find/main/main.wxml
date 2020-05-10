@@ -7,7 +7,7 @@
 	<!-- <text>pages/find/main/main.wxml</text> -->
 	<view class="find_main_top_searchbar">
 		<view class="find_main_top_searchbar_area">
-			<input class="find_main_top_searchbar_area_input" placeholder="需求搜索" confirm-type="search" ></input>
+			<input class="find_main_top_searchbar_area_input" model:value="{{searchContent}}" placeholder="需求搜索" confirm-type="search"></input>
 			<mp-icon class="find_main_top_searchbar_area_search_icon" icon="search" color="#cccccc" size="{{25}}"></mp-icon>
 		</view>
 	</view>
@@ -25,14 +25,14 @@
 		<view style="height:1px; background-color: #e1e1e7; position: relative; left: 0; width: 100%; top: 39x;"></view>
 	</view>
 	<scroll-view class="demand_market_tableview" scroll-y="true">
-		<block wx:for="{{[1, 2, 3, 4]}} " wx:key="unique">
+		<block wx:for="{{arrOfData}}" wx:key="unique">
 			<view class="demand_market_tableview_cell" style="background-color: #fff;" catchtap="demand_market_tableview_cell_clicked" data-index="{{index}}">
-				<view class="demand_market_tableview_cell_title">热风棉资源需求</view>
-				<view class="demand_market_tableview_cell_subtitle">需求人：平台</view>
-				<view class="demand_market_tableview_cell_subtitle_inline">需求类别：采购</view>
-				<view class="demand_market_tableview_cell_subtitle_inline">需求状态：<span style="color: #af2f39">对接中</span>				
+				<view class="demand_market_tableview_cell_title">{{item.title}}</view>
+				<view class="demand_market_tableview_cell_subtitle">需求人：{{item.demander_name}}</view>
+				<view class="demand_market_tableview_cell_subtitle_inline">需求类别：{{item.type_name}}</view>
+				<view class="demand_market_tableview_cell_subtitle_inline">需求状态：<span style="color: #af2f39">{{item.status_name}}</span>				
 				</view>				
-				<view class="demand_market_tableview_cell_subtitle_inline" style="margin-bottom: 10px">结束时间：2020-05-09</view>
+				<view class="demand_market_tableview_cell_subtitle_inline" style="margin-bottom: 10px">结束时间：{{item.expiring_time_string}}</view>
 				<!-- <view class="demand_market_tableview_cell_subtitle_inline" style="margin-bottom: 10px">查看次数：31				
 				</view> -->
 				<view style="height:1px; background-color: #f1f1f7; margin: 0px 10px"></view>

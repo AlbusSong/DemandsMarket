@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "我发布的需求",
+  "enablePullDownRefresh": false,
   "usingComponents": {}
 }

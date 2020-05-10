@@ -7,10 +7,5 @@ var randomColor = function () {
   return colorStr;
 }
 
-var asssd = function () {
-  return "asdsflasdjflsf";
-}
-
 module.exports.randomColor = randomColor;
-module.exports.asssd = asssd;
 module.exports.mainColor = "#0a0da8";

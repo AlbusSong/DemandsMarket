@@ -13,6 +13,16 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+var getFormattedDate = function(timestamp) {
+  const d = new Date(timestamp);
+  const year = d.getFullYear();
+  const month = d.getMonth() + 1;  
+  const day = d.getDate();
+  const result = [year, month, day].map(formatNumber).join('-');
+  return result;
+}
+
 module.exports = {
-  getTodayDate: getTodayDate
+  getTodayDate: getTodayDate,
+  getFormattedDate: getFormattedDate,
 }

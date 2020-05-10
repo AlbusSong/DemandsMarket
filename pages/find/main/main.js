@@ -6,24 +6,37 @@ Page({
    * Page initial data
    */
   data: {
-    banner_image_url:"https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
-    arrOfData: [1, 2, 3, 4],    
+    banner_image_url: "https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
+
+    searchContent: "",
+    pageIndex: 0,
+    seconds_ago: 0,
+    filter_province: "所有",
+    filter_city: "所有",
+    arrOfData: [],
     array: [{
       message: 'foo',
     }, {
       message: 'bar'
     }],
-    arrOfFunctionItem: [
-      {title:"需求分类"},
-      {title:"发布时间"},
-      {title:"需求状态"},
-      {title:"所在地区"},
+    arrOfFunctionItem: [{
+        title: "需求分类"
+      },
+      {
+        title: "发布时间"
+      },
+      {
+        title: "需求状态"
+      },
+      {
+        title: "所在地区"
+      },
     ],
 
     // Filter View related
     selectedIndexForFilterView: 3,
     shouldShowFilterView: false,
-    arrOfDemandFilterItem: ['所有', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西',],
+    arrOfDemandFilterItem: ['所有', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西', '北京', '河南', '上海', '江苏', '广东', '山西', '贵州', '浙江', '河北', '黑龙江', '辽宁', '吉林', '江西', ],
     selectedIndexForDemandFilter: 0,
 
     arrOfTimeFilterItem: ['不限', '今天发布', '三天内发布', '一周内发布', '一月内发布', '两月内发布'],
@@ -37,7 +50,7 @@ Page({
   },
 
   // Demand market tableview
-  demand_market_tableview_cell_clicked: function(event) {
+  demand_market_tableview_cell_clicked: function (event) {
     let itemIndex = event.currentTarget.dataset.index;
     console.log(itemIndex);
     wx.navigateTo({
@@ -45,8 +58,8 @@ Page({
     })
   },
 
-  functionAreaClicked: function(event) {
-    let itemIndex = Math.floor(4 * event.detail.x/wx.getSystemInfoSync().windowWidth);    
+  functionAreaClicked: function (event) {
+    let itemIndex = Math.floor(4 * event.detail.x / wx.getSystemInfoSync().windowWidth);
     console.log(itemIndex);
     this.setData({
       selectedIndexForFilterView: itemIndex,
@@ -54,15 +67,15 @@ Page({
     });
   },
 
-  functionAreaInFilterViewClicked: function(event) {
-    let itemIndex = Math.floor(4 * event.detail.x/wx.getSystemInfoSync().windowWidth);
+  functionAreaInFilterViewClicked: function (event) {
+    let itemIndex = Math.floor(4 * event.detail.x / wx.getSystemInfoSync().windowWidth);
     console.log(itemIndex);
     this.setData({
       selectedIndexForFilterView: itemIndex,
     });
   },
 
-  demandFilterItemClicked: function(event) {
+  demandFilterItemClicked: function (event) {
     let itemIndex = event.currentTarget.dataset.index;
     console.log(itemIndex);
     this.setData({
@@ -71,50 +84,93 @@ Page({
     this.filterBackgroundClicked();
   },
 
-  timeFilterItemClicked: function(event) {
+  timeFilterItemClicked: function (event) {
     let itemIndex = event.currentTarget.dataset.index;
     this.setData({
       selectedIndexForTimeFilter: itemIndex
     });
   },
 
-  statusFilterItemClicked: function(event) {
+  statusFilterItemClicked: function (event) {
     let itemIndex = event.currentTarget.dataset.index;
     this.setData({
       selectedIndexForStatusFilter: itemIndex
     });
   },
 
-  areaFilterItemClicked: function(event) {
+  areaFilterItemClicked: function (event) {
     let itemIndex = event.currentTarget.dataset.index;
     this.setData({
       selectedIndexForAreaFilter: itemIndex
     });
   },
 
-  filterBackgroundClicked: function(event) {
+  filterBackgroundClicked: function (event) {
     this.setData({
       shouldShowFilterView: false
     });
+  },
+
+  search: function (value) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve([{
+          text: '搜索结果',
+          value: 1
+        }, {
+          text: '搜索结果2',
+          value: 2
+        }])
+      }, 200)
+    })
+  },
+
+  selectResult: function (e) {
+    console.log('select result', e.detail)
+  },
+
+  onReachBottom: function () {
+    // this.getArticles(page);
+    console.log("lsjfalsjls");
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '',
+      mask: true,
+    });
+    
+    var params = {
+      pageSize: 20,
+      pageIndex: this.data.pageIndex,
+      type_ids: "",
+      create_time_offset: this.data.seconds_ago,
+      province: this.data.filter_province,
+      city: this.data.filter_city,
+    }
 
+    var that = this;
+    getApp().func.postServer("demand/get_demand_list", params, function(r) {      
+      console.log(r);
+      if (r.code == 0) {
+        wx.showToast({
+          title: r.message,
+          icon: "none",
+        })
+        return;
+      }
+
+      wx.hideLoading();
+      that.data.arrOfData = that.data.arrOfData.concat(r.data);
+      that.setData({
+        arrOfData: that.data.arrOfData
+      });
+      console.log("that.data.arrOfData: ", that.data.arrOfData);
+    });
   },
-
-  search: function (value) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve([{text: '搜索结果', value: 1}, {text: '搜索结果2', value: 2}])
-        }, 200)
-    })
-},
-selectResult: function (e) {
-    console.log('select result', e.detail)
-},
 
   /**
    * Lifecycle function--Called when page is initially rendered
@@ -123,7 +179,7 @@ selectResult: function (e) {
     // wx.navigateTo({
     //   url: '../../mine/company/submit/submit',
     // });
-    
+
     // wx.navigateTo({
     //   url: '../../mine/certificate_management/certificate_management',
     // });
@@ -131,13 +187,16 @@ selectResult: function (e) {
     // wx.navigateTo({
     //   url: '../../mine/my_demands/demand_detail/demand_detail',
     // })
+
+    // wx.showLoading({
+    //   title: "",
+    // })
   },
 
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {    
-  },
+  onShow: function () {},
 
   /**
    * Lifecycle function--Called when page hide
