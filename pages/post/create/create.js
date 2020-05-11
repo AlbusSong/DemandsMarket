@@ -8,6 +8,8 @@ Page({
    * Page initial data
    */
   data: {
+    itemData: null,
+
     shouldShowChosenSpecialities: false,
     expiringDate: "2020-04-27",
     shouldShowSpecialitiesSelectionView: false,
@@ -72,6 +74,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.itemData = JSON.parse(options.item);
+    console.log("this.itemData:", this.itemData);
     this.setData({
       expiringDate: util.getTodayDate(),
     });    
@@ -81,7 +85,6 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
   },
 
   /**

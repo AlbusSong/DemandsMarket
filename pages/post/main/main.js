@@ -7,34 +7,52 @@ Page({
   data: {
     banner_image_url:"https://pic3.zhimg.com/v2-48d604586e07ab6c2503f532b70b535e_1200x500.jpg",
 
-    arrOfDemandCategoryItem: ['产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业', '所有', '产品设计', '工艺设计', '工艺优化', '采购', '计划与调度', '生产作业'],
+    arrOfDemandCategoryItem: null,
   },
 
   categoryItemCellClicked: function(event) {
     let itemIndex = event.currentTarget.dataset.index;
     console.log(itemIndex);
+    let itemData = this.data.arrOfDemandCategoryItem[itemIndex];
     wx.navigateTo({
-      url: '../create/create',
-    })
+      url: '../create/create?item=' + JSON.stringify(itemData),
+    });
+  },
+
+  getDataFromServer: function() {
+    wx.showLoading({
+      title: '',
+      mask: true,
+    });
+
+    var that = this;
+    getApp().func.postServer("demand/get_demand_type_list", {}, function(r) {
+      console.log(r);
+      wx.hideLoading();
+      that.data.arrOfDemandCategoryItem = r.data;
+      that.setData({
+        arrOfDemandCategoryItem: that.data.arrOfDemandCategoryItem,
+      });
+    });
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.getDataFromServer();
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    if (getApp().globalData.userInfo == null) {
-      wx.redirectTo({
-        url: '../../mine/authorize/authorize',
-      });
-      return;
-    }
+    // if (getApp().globalData.userInfo == null) {
+    //   wx.redirectTo({
+    //     url: '../../mine/authorize/authorize',
+    //   });
+    //   return;
+    // }
   },
 
   /**

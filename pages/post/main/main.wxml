@@ -13,7 +13,7 @@
   <view wx:for="{{arrOfDemandCategoryItem}}" wx:key="*this" class="categoryItemCell" style="background-color: {{global_tool.whiteColor()}}" catchtap="categoryItemCellClicked" data-index="{{index}}">
     <view style="height: 1px; background-color: #f1f1f7; position: relative; top: 0px;"></view> 
     <view style="line-height: 36px; padding-left: 10px;">
-      {{item}}
+      {{item.title}}
     </view>       
 	</view>
 </scroll-view>
