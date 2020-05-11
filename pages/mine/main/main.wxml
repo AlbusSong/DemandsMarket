@@ -9,12 +9,12 @@
 <view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
 <view class="mineMainCell">
   <view class="mineMainCellTitle">用户名：</view>
-  <view class="mineMainCellSubtitle">Albus</view>
+  <view class="mineMainCellSubtitle">{{nickName}}</view>
 </view>
 <view style="background-color: #f1f1f7; height: 1px; width: 100%;"></view>
 <view class="mineMainCell">
   <view class="mineMainCellTitle">登录账号：</view>
-  <view class="mineMainCellSubtitle">15503938218</view>
+  <view class="mineMainCellSubtitle">微信登录</view>
 </view>
 <view style="background-color: #f1f1f7; height: 10px; width: 100%;"></view>
 <!-- <view class="mineMainCell">

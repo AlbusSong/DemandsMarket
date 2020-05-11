@@ -5,7 +5,8 @@ Page({
    * Page initial data
    */
   data: {
-    portrait_url: "http://inews.gtimg.com/newsapp_bt/0/11048959590/1000/0",
+    portrait_url: null,
+    nickName: "",
   },
 
   gotoMyDemandsPage: function() {
@@ -20,11 +21,20 @@ Page({
     });
   },  
 
+  updateMineUI: function() {
+    this.data.nickName = getApp().globalData.userInfo.nickName;
+    this.data.portrait_url = getApp().globalData.userInfo.avatarUrl;
+    this.setData({
+      nickName: this.data.nickName,
+      portrait_url: this.data.portrait_url,
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.updateMineUI();
   },  
 
   /**
@@ -50,7 +60,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    this.updateMineUI();
   },
 
   /**

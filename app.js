@@ -9,6 +9,14 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    var that = this;
+    wx.getStorage({
+      key: 'myselfInfo',
+      success (res) {
+        that.globalData.userInfo = res.data;
+      }
+    });
+
     // 登录
     wx.login({
       success: res => {
@@ -39,11 +47,16 @@ App({
               that.func.postServer("authorize/update_userinfo", parameters, function(responseJson) {
                 console.log("authorize/update_userinfo: ", responseJson);
                 that.globalData.userInfo = responseJson.data;
+
+                wx.setStorage({
+                  key:"myselfInfo",
+                  data: responseJson.data,
+                })
               }, false);
 
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res);
-              }
+              }              
             }
           })
         }
