@@ -7,7 +7,7 @@
 	<!-- <text>pages/find/main/main.wxml</text> -->
 	<view class="find_main_top_searchbar">
 		<view class="find_main_top_searchbar_area">
-			<input class="find_main_top_searchbar_area_input" model:value="{{searchContent}}" placeholder="需求搜索" confirm-type="search"></input>
+			<input class="find_main_top_searchbar_area_input" model:value="{{searchContent}}" placeholder="需求搜索" confirm-type="search" bindconfirm="tryToSearch"></input>
 			<mp-icon class="find_main_top_searchbar_area_search_icon" icon="search" color="#cccccc" size="{{25}}"></mp-icon>
 		</view>
 	</view>
@@ -18,7 +18,7 @@
 	<view class="demand_market_filter_function_area" bindtap="functionAreaClicked">	
 		<view wx:for="{{arrOfFunctionItem}}" wx:key="unique" class="demand_market_filter_function_item" style="background-color: #fff; height: 39px; ">
 			<view style="background-color: #fff; display: inline-block; left: 3px; position: relative">
-				{{item.title}}
+				{{item}}
 			</view>
 			<icon class="iconfont icon-xiajiantou1" style="left: 3px; top: 3px; position: relative; font-size: 20px; background-color: #fff;" />
 		</view>

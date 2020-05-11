@@ -51,7 +51,7 @@ App({
                 wx.setStorage({
                   key:"myselfInfo",
                   data: responseJson.data,
-                })
+                });
               }, false);
 
               if (this.userInfoReadyCallback) {

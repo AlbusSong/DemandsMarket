@@ -29,6 +29,10 @@ Page({
     getApp().func.postServer("demand/get_demand_type_list", {}, function(r) {
       console.log(r);
       wx.hideLoading();
+      wx.setStorage({
+        key:"specialityList",
+        data: r.data,
+      });
       that.data.arrOfDemandCategoryItem = r.data;
       that.setData({
         arrOfDemandCategoryItem: that.data.arrOfDemandCategoryItem,
