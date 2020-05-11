@@ -8,13 +8,19 @@ Page({
    * Page initial data
    */
   data: {
-    itemData: null,
+    itemData: null,        
 
+    demandTitle: null,
+
+    demandContent: null,
+
+    expiringDate: "请选择 >",
+
+    shouldShowSpecialitiesSelectionView: false,    
+    arrOfSpecialityItem: null,
     shouldShowChosenSpecialities: false,
-    expiringDate: "2020-04-27",
-    shouldShowSpecialitiesSelectionView: false,
     arrOfSelectedIndexForSpecialities: [],
-    arrOfSelectedIndexForSpecialitiesForReal: []
+    selectedSpecialityString: "",
   },
 
   datePickerChanged: function(e) {
@@ -48,12 +54,20 @@ Page({
     });
   },
 
-  selectSpecialitiesViewBtnConfirmClicked: function(event) {
-    this.arrOfSelectedIndexForSpecialities = [];
+  selectSpecialitiesViewBtnConfirmClicked: function(event) {    
+    var tmpList = [];
+    console.log("arrOfSelectedIndexForSpecialities: ", this.data.arrOfSelectedIndexForSpecialities);
+    for(var i = 0; i < this.data.arrOfSelectedIndexForSpecialities.length; i++) {
+      let specialityString = this.data.arrOfSpecialityItem[i];
+      tmpList.push(specialityString);
+    } 
+    this.data.selectedSpecialityString = tmpList.join(",");
+    console.log("selectedSpecialityString:", this.data.selectedSpecialityString);
     this.setData({
       shouldShowSpecialitiesSelectionView: false,
-      arrOfSelectedIndexForSpecialitiesForReal: this.data.arrOfSelectedIndexForSpecialities
-    });    
+      selectedSpecialityString: this.data.selectedSpecialityString,
+    });
+    this.arrOfSelectedIndexForSpecialities = [];
   },
 
   selectSpecialitiesItemCellClicked: function(event) {
@@ -67,7 +81,85 @@ Page({
     this.setData({
       arrOfSelectedIndexForSpecialities: this.data.arrOfSelectedIndexForSpecialities,
     });
-    console.log(this.data.arrOfSelectedIndexForSpecialities);
+  },
+
+  submitButtonClicked: function(e) {    
+    console.log("submitButtonClicked");
+    if (this.data.demandTitle == null) {
+      wx.showToast({
+        title: '请输入标题',
+        icon: "none",
+      });
+      return;
+    }
+    if (this.data.demandContent == null) {
+      wx.showToast({
+        title: '请输入描述信息',
+        icon: "none",
+      });
+      return;
+    }
+    if (this.data.expiringDate == "请选择 >") {
+      wx.showToast({
+        title: '请选择结束时间',
+        icon: "none",
+      });
+      return;
+    }
+    if (this.data.selectedSpecialityString == null || this.data.selectedSpecialityString == "") {
+      wx.showToast({
+        title: '请选择所属行业',
+        icon: "none",
+      });
+      return;
+    }
+
+    var params = {
+      title: this.data.demandTitle,
+      content: this.data.demandContent,
+      expiring_time: (Date.parse(new Date(this.data.expiringDate + " 23:59:59"))/1000),
+      speciality: this.data.selectedSpecialityString,
+      type: parseInt(this.itemData.type_id),
+    };
+    console.log("params: ", params);
+    wx.showLoading({
+      title: '',
+      mask: true,
+    });
+    getApp().func.postServer("demand/create_demand", params, function(r) {
+      console.log("demand/create_demand:", r);
+      if (r.code == 0) {
+        wx.showToast({
+          title: r.message,
+          icon: "none",
+        });
+        return;
+      }
+
+      wx.showToast({
+        title: r.message,
+        icon: "success",
+      });
+      wx.navigateBack({
+        delta: 1,
+      });
+    });
+  },
+
+  getDataFromServer: function() {
+    wx.showLoading({
+      title: '',
+    });
+
+    var that = this;
+    getApp().func.postServer("demand/get_demand_speciality_list", {}, function(r) {
+      console.log("get_demand_speciality_list:", r);
+      wx.hideLoading();
+      that.data.arrOfSpecialityItem = r.data;
+      that.setData({
+        arrOfSpecialityItem: that.data.arrOfSpecialityItem,
+      });      
+    });
   },
 
   /**
@@ -76,9 +168,11 @@ Page({
   onLoad: function (options) {
     this.itemData = JSON.parse(options.item);
     console.log("this.itemData:", this.itemData);
-    this.setData({
-      expiringDate: util.getTodayDate(),
-    });    
+    // this.setData({
+    //   expiringDate: util.getTodayDate(),
+    // });
+    
+    this.getDataFromServer();
   },
 
   /**

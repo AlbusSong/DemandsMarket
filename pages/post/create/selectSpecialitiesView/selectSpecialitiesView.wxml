@@ -7,7 +7,7 @@
       <span style="line-height: 30px;">确定</span>
     </view>
     <scroll-view class="selectSpecialitiesTableview" scroll-y="true">
-      <view wx:for="{{[1, 2, 3, 4, 5, 7, 8, 9, 10]}}" wx:key="*this"  class="selectSpecialitiesItemCell" style="background-color: {{global_tool.siblingColor(index, true)}}" catchtap="selectSpecialitiesItemCellClicked" data-index="{{index}}">
+      <view wx:for="{{arrOfSpecialityItem}}" wx:key="*this"  class="selectSpecialitiesItemCell" style="background-color: {{global_tool.siblingColor(index, true)}}" catchtap="selectSpecialitiesItemCellClicked" data-index="{{index}}">
         <span style="line-height: 35px; padding-left:10px;">{{item}}</span>
         <icon hidden="{{create.getHiddenStatusForSpecialitiesSelection(arrOfSelectedIndexForSpecialities, index)}}" type="success" size="15" style="position: absolute; right: 10px; top: 10px;" />
       </view>
