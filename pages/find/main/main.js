@@ -17,11 +17,7 @@ Page({
     filter_province: "所有",
     filter_city: "所有",
     arrOfData: [],
-    array: [{
-      message: 'foo',
-    }, {
-      message: 'bar'
-    }],
+
     arrOfFunctionItem: [{
         title: "需求分类"
       },
@@ -55,9 +51,9 @@ Page({
   // Demand market tableview
   demand_market_tableview_cell_clicked: function (event) {
     let itemIndex = event.currentTarget.dataset.index;
-    console.log(itemIndex);
+    let the_id = this.data.arrOfData[itemIndex].the_id;
     wx.navigateTo({
-      url: '../detail/detail',
+      url: '../detail/detail?the_id=' + the_id,
     })
   },
 

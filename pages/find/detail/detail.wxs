@@ -1,0 +1,21 @@
+var getFilledValue = function(detail_data, index) {
+  var result = "";
+  if (index == 0) {
+    result = detail_data.title;
+  } else if (index == 1) {
+    result = detail_data.demander_name;
+  } else if (index == 2) {
+    result = detail_data.expiring_time_string;
+  } else if (index == 3) {
+    result = detail_data.status_name;
+  } else if (index == 4) {
+    result = detail_data.demand_type_name;
+  } else {
+    result = detail_data.specialities;
+  }
+  return result;
+}
+
+module.exports = {
+  getFilledValue: getFilledValue,
+}
