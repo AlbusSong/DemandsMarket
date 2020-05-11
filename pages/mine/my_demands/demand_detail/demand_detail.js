@@ -5,14 +5,46 @@ Page({
    * Page initial data
    */
   data: {
+    the_id: null,
+    detail_data: null,
+  },
 
+  getDataFromServer: function() {
+    if (this.data.the_id == null) {
+      return;
+    }
+
+    wx.showLoading({
+      title: '',
+      mask: true,
+    })
+
+    var that = this;
+    getApp().func.postServer("demand/get_demand_detail", {the_id: this.data.the_id}, function(r) {
+      console.log("get_demand_detail: ", r);
+      if (r.code == 0) {
+        wx.showToast({
+          title: r.message,
+          icon: "none",
+        });
+        return;
+      }
+
+      wx.hideLoading();
+      that.data.detail_data = r.data;
+      that.setData({
+        detail_data: that.data.detail_data,
+      });
+    });
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.data.the_id = parseInt(options.the_id);
+    console.log("the_id: ", this.data.the_id);
+    this.getDataFromServer();
   },
 
   /**

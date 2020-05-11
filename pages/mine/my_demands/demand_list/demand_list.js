@@ -18,15 +18,15 @@ Page({
   demandListItemClicked: function(event) {
     let itemIndex = event.currentTarget.dataset.index;
     console.log(itemIndex);
-
+    let the_id = this.data.arrOfData[itemIndex].the_id;
     wx.navigateTo({
-      url: '../demand_detail/demand_detail',
+      url: '../demand_detail/demand_detail?the_id=' + the_id,
     })
   },
 
   onReachBottom: function () {
     // this.getArticles(page);
-    console.log("lsjfalsjls");
+    // console.log("lsjfalsjls");
   },
 
   tryToLoadMore: function(event) {

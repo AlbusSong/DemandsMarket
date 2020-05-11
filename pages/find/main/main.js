@@ -54,7 +54,7 @@ Page({
     let the_id = this.data.arrOfData[itemIndex].the_id;
     wx.navigateTo({
       url: '../detail/detail?the_id=' + the_id,
-    })
+    });
   },
 
   functionAreaClicked: function (event) {
