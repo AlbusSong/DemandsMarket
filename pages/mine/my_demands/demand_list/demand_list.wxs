@@ -1,0 +1,24 @@
+var getStatusBackgroundColor = function(status) {
+  var result = "#dfcf3f"
+  if (status == -1) {
+    // 审核被拒
+    result = "#eb5d58";
+  } else if (status == 0) {
+    // 审核中
+    result = "#dfcf3f";
+  } else if (status == 1) {
+    // 对接中
+    result = "#9feb58";
+  } else if (status == 2) {
+    // 跟进中
+    result = "#586eeb";
+  } else if (status == 3) {
+    // 已对接
+    result = "#58eb70"
+  }
+  return result;
+}
+
+module.exports = {
+  getStatusBackgroundColor: getStatusBackgroundColor,
+}

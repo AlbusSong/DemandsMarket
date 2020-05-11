@@ -1,7 +1,9 @@
 /* pages/mine/my_demands/demand_list/demand_list.wxss */
 
+@import "../../../../others/view/loadmore/loadmore.wxss";
+
 .demand_list_tableview {
-  background-color: #0f3;
+  background-color: #fff;
   position: absolute;
   left: 0;
   right: 0;
@@ -62,7 +64,7 @@
 }
 
 .separatorLine {
-  background-color: #f1f1f7;
+  background-color: #e1e1e7;
   height: 1px;
   position: absolute;
   width: 100%;

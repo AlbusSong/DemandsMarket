@@ -1,18 +1,22 @@
 <!--pages/mine/my_demands/demand_list/demand_list.wxml-->
-<scroll-view class="demand_list_tableview" scroll-y="true" lower-threshold="20px" bindscrolltolower="bindLoadMore" bindscrolltoupper="loadNew" upper-threshold="20px">
-  <view class="demand_list_tableview_cell" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="unique" catchtap="demandListItemClicked" data-index="{{index}}">
+
+<wxs src="./demand_list.wxs" module="demand_list_tool" />
+
+<scroll-view class="demand_list_tableview" scroll-y="true" lower-threshold="20px" bindscrolltolower="tryToLoadMore" bindscrolltoupper="loadNew" upper-threshold="20px">
+  <view class="demand_list_tableview_cell" wx:for="{{arrOfData}}" wx:key="unique" catchtap="demandListItemClicked" data-index="{{index}}">
     <view class="separatorLine"></view>
-    <view class="demand_list_tableview_cell_status">
-      审核通过
+    <view class="demand_list_tableview_cell_status" style="background-color: {{demand_list_tool.getStatusBackgroundColor(item.status)}}">
+      {{item.status_name}}
     </view>
     <view class="demand_list_tableview_cell_title">
-      贵金属材料采购需求
+      {{item.title}}
     </view>
     <view class="demand_list_tableview_cell_content">
-      还有大量以 Python 为基础创建的开源项目，因此在大多数情况下，你不需要从头开始。
+      {{item.content}}
     </view>
     <view class="demand_list_tableview_cell_publish_time">
-      发布时间：2020-05-08 15:23
+      发布时间：{{item.publish_time_string}}
     </view>        
   </view>
+  <include src="../../../../others/view/loadmore/loadmore.wxml" />
 </scroll-view>
