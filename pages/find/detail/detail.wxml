@@ -20,10 +20,6 @@
   </view>
 </scroll-view>
 <view class="functionArea">
-  <view class="btnMatchDemand">
-    <span style="line-height:40px;">我要对接</span>
-  </view>
-  <view class="btnShareDemand">
-    <span style="line-height:40px;">分享需求</span>
-  </view>
+  <button type="match_demand" hover-class="match_demand-button-hover" catchtap="demandMatchButtonClicked">我要对接</button>
+  <button type="share" hover-class="share-button-hover" catchtap="shareButtonClicked">分享需求</button>
 </view>

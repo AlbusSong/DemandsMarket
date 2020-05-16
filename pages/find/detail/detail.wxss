@@ -53,26 +53,34 @@
   padding: 10px;
 }
 
-.btnMatchDemand {
+button[type="match_demand"]{
   display: inline-block;
-  text-align: center;
   background-color: #a83933;
   height: 40px;
   width: 45%;
   border-radius: 6px;
   color: #fff;
-  font-size: 14px;
+  text-align: center;
+  font-size: 16px;
   margin-right: 5px;
 }
 
-.btnShareDemand {
+button.match_demand-button-hover {
+  background-color: #df5454;
+}
+
+button[type="share"]{
   display: inline-block;
   text-align: center;
   background-color: #a83933;
   height: 40px;
   width: 45%;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   margin-left: 5px;
+}
+
+button.share-button-hover {
+  background-color: #df5454;
 }
