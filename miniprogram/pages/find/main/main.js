@@ -243,11 +243,25 @@ Page({
     console.log("lsjfalsjls");
   },
 
+  cloudFunctionTest: function() {
+    wx.cloud.callFunction({
+      // 需调用的云函数名
+      name: 'add',
+      // 传给云函数的参数
+      data: {
+        a: 12,
+        b: 19,
+      },
+      // 成功回调
+      complete: console.log
+    })
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.getDataFromServer();
+    // this.getDataFromServer();
 
     this.getSpecialityListFromServer();
   },
